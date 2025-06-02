@@ -1,4 +1,3 @@
 C:/Users/alero/Documents/Github/ArregloSist-licoNPU/cmake-build-debug/CMakeFiles/ArregloSist_licoNPU.dir
-C:/Users/alero/Documents/Github/ArregloSist-licoNPU/cmake-build-debug/CMakeFiles/TestSystolicModel.dir
 C:/Users/alero/Documents/Github/ArregloSist-licoNPU/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/alero/Documents/Github/ArregloSist-licoNPU/cmake-build-debug/CMakeFiles/rebuild_cache.dir

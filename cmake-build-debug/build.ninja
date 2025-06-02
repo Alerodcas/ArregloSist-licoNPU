@@ -56,6 +56,20 @@ build CMakeFiles/ArregloSist_licoNPU.dir/src/Matrix.cpp.obj: CXX_COMPILER__Arreg
   OBJECT_DIR = CMakeFiles\ArregloSist_licoNPU.dir
   OBJECT_FILE_DIR = CMakeFiles\ArregloSist_licoNPU.dir\src
 
+build CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj: CXX_COMPILER__ArregloSist_licoNPU_unscanned_Debug C$:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/PE.cpp || cmake_object_order_depends_target_ArregloSist_licoNPU
+  DEP_FILE = CMakeFiles\ArregloSist_licoNPU.dir\src\PE.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/alero/Documents/Github/ArregloSist-licoNPU/include
+  OBJECT_DIR = CMakeFiles\ArregloSist_licoNPU.dir
+  OBJECT_FILE_DIR = CMakeFiles\ArregloSist_licoNPU.dir\src
+
+build CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj: CXX_COMPILER__ArregloSist_licoNPU_unscanned_Debug C$:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/SystolicArray.cpp || cmake_object_order_depends_target_ArregloSist_licoNPU
+  DEP_FILE = CMakeFiles\ArregloSist_licoNPU.dir\src\SystolicArray.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/alero/Documents/Github/ArregloSist-licoNPU/include
+  OBJECT_DIR = CMakeFiles\ArregloSist_licoNPU.dir
+  OBJECT_FILE_DIR = CMakeFiles\ArregloSist_licoNPU.dir\src
+
 build CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicModel.cpp.obj: CXX_COMPILER__ArregloSist_licoNPU_unscanned_Debug C$:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/SystolicModel.cpp || cmake_object_order_depends_target_ArregloSist_licoNPU
   DEP_FILE = CMakeFiles\ArregloSist_licoNPU.dir\src\SystolicModel.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -85,7 +99,7 @@ build CMakeFiles/ArregloSist_licoNPU.dir/src/main.cpp.obj: CXX_COMPILER__Arreglo
 #############################################
 # Link the executable ArregloSist_licoNPU.exe
 
-build ArregloSist_licoNPU.exe: CXX_EXECUTABLE_LINKER__ArregloSist_licoNPU_Debug CMakeFiles/ArregloSist_licoNPU.dir/src/Matrix.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicModel.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/Tests.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/main.cpp.obj
+build ArregloSist_licoNPU.exe: CXX_EXECUTABLE_LINKER__ArregloSist_licoNPU_Debug CMakeFiles/ArregloSist_licoNPU.dir/src/Matrix.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicModel.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/Tests.cpp.obj CMakeFiles/ArregloSist_licoNPU.dir/src/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ArregloSist_licoNPU.dir

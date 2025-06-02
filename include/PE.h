@@ -2,18 +2,25 @@
 #define PE_H
 
 #include <cstdint>
-#include <algorithm>
 
-using DataType = int16_t;
+using Word = int16_t;
 
-// Función de activación
-inline DataType relu(DataType x) {
-    return std::max(static_cast<DataType>(0), x); //Si x < 0, devuelve 0. Si x >= 0, devuelve x.
-}
+class PE {
+private:
+    Word a_reg = 0, b_reg = 0, acc = 0;
 
-// PE básico: realiza multiplicación, suma acumulativa y ReLU
-inline DataType PE(DataType a, DataType b, DataType acc) {
-    return relu(acc + a * b);
-}
+public:
+    // Entrada para el nuevo ciclo
+    Word a_in = 0, b_in = 0;
+
+    void tick();                 // Ejecuta un ciclo (multiplica y acumula)
+    void reset();                // Resetea los registros
+    void apply_activation();     // Aplica ReLU
+    Word get_output() const;     // Valor acumulado
+    Word get_a_out() const;      // Valor a propagar a derecha
+    Word get_b_out() const;      // Valor a propagar abajo
+};
+
+Word relu(Word value);
 
 #endif // PE_H
