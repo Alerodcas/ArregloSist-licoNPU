@@ -11,10 +11,10 @@ void runController() {
                                              {9, 0, 1, 2},
                                              {3, 4, 5, 6}}};
 
-    std::array<std::array<Word, N>, N> B = {{{7, 6, 5, 4},
-                                             {3, 2, 1, 0},
-                                             {1, 2, 3, 4},
-                                             {5, 6, 7, 8}}};
+    std::array<std::array<Word, N>, N> B = {{{-7, 6, 5, 4},
+                                             {3, -2, 1, 0},
+                                             {1, 2, -3, 4},
+                                             {5, 6, 7, -8}}};
 
     ctrl.load_data(A, B);
     std::cout << "Ejecución paso a paso:\n";

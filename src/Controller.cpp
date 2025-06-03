@@ -14,40 +14,21 @@ void Controller::load_data(const std::array<std::array<Word, N>, N>& A,
 void Controller::step() {
     if (!loaded || done) return;
 
-    // Simular un ciclo individual
-    for (int i = 0; i < N; ++i) {
-        for (int j = 0; j < N; ++j) {
-            // Entradas por izquierda (A)
-            if (j == 0 && current_cycle - i >= 0 && current_cycle - i < N)
-                systolic.pes[i][j].a_in = matrixA[i][current_cycle - i];
-            else if (j > 0)
-                systolic.pes[i][j].a_in = systolic.pes[i][j - 1].get_a_out();
-            else
-                systolic.pes[i][j].a_in = 0;
-
-            // Entradas por arriba (B)
-            if (i == 0 && current_cycle - j >= 0 && current_cycle - j < N)
-                systolic.pes[i][j].b_in = matrixB[current_cycle - j][j];
-            else if (i > 0)
-                systolic.pes[i][j].b_in = systolic.pes[i - 1][j].get_b_out();
-            else
-                systolic.pes[i][j].b_in = 0;
-        }
-    }
-
-    for (auto& row : systolic.pes)
-        for (auto& pe : row)
-            pe.tick();
-
+    systolic.tick_cycle(matrixA, matrixB, current_cycle);
     current_cycle++;
+
     if (current_cycle >= total_cycles) {
-        for (int i = 0; i < N; ++i)
-            for (int j = 0; j < N; ++j) {
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < N; ++j){
                 systolic.pes[i][j].apply_activation();
+                systolic.result[i][j] = systolic.pes[i][j].get_output();
+
             }
+        }
         done = true;
     }
 }
+
 
 void Controller::run() {
     while (!done)
