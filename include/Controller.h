@@ -24,8 +24,10 @@ enum Register {
     REG_ADDR_A,      // Dirección base matriz A
     REG_ADDR_B,      // Dirección base matriz B
     REG_ADDR_C,      // Dirección base matriz resultado
+    REG_ACTIVATION_MODE,
     NUM_REGISTERS
 };
+
 
 
 class Controller {
@@ -60,6 +62,10 @@ public:
 
     void write_register(Register reg, Word value);
     Word read_register(Register reg) const;
+    SystolicArray get_systolic_array() const {
+        return systolic;
+    }
+
 };
 
 #endif // CONTROLLER_H

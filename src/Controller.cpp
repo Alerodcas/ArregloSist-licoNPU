@@ -69,10 +69,12 @@ void Controller::step() {
                 current_cycle++;
                 registers[REG_MUL_COUNT] += N * N;
             } else {
-                for (int i = 0; i < N; ++i)
-                    for (int j = 0; j < N; ++j)
-                        systolic.pes[i][j].apply_activation();
-
+                for (int i = 0; i < N; ++i) {
+                    for (int j = 0; j < N; ++j) {
+                        int mode = registers[REG_ACTIVATION_MODE];
+                        systolic.pes[i][j].apply_activation(mode);
+                    }
+                }
                 mem_row = mem_col = 0;
                 phase = ExecPhase::STORING_C;
             }
@@ -149,6 +151,8 @@ Word Controller::read_register(Register reg) const {
 void Controller::attach_memory(Memory* mem) {
     memory = mem;
 }
+
+
 
 
 
