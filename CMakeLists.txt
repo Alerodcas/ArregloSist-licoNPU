@@ -19,6 +19,8 @@ add_executable(ArregloSist_licoNPU ${SOURCES}
         src/SystolicArray.cpp
         include/Controller.h
         src/Controller.cpp
+        include/Memory.h
+        src/Memory.cpp
 )
 
 

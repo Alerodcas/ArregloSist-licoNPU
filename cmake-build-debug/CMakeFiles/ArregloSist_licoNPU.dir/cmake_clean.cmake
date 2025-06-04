@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "ArregloSist_licoNPU.pdb"
   "CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.obj"
   "CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.obj.d"
+  "CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj"
+  "CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj.d"
   "CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj"
   "CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj.d"
   "CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj"

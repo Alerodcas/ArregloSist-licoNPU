@@ -83,11 +83,26 @@ CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\Controller.cpp -o CMakeFiles\ArregloSist_licoNPU.dir\src\Controller.cpp.s
 
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/flags.make
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/includes_CXX.rsp
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj: C:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/Memory.cpp
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj -MF CMakeFiles\ArregloSist_licoNPU.dir\src\Memory.cpp.obj.d -o CMakeFiles\ArregloSist_licoNPU.dir\src\Memory.cpp.obj -c C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\Memory.cpp
+
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\Memory.cpp > CMakeFiles\ArregloSist_licoNPU.dir\src\Memory.cpp.i
+
+CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\Memory.cpp -o CMakeFiles\ArregloSist_licoNPU.dir\src\Memory.cpp.s
+
 CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/flags.make
 CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/includes_CXX.rsp
 CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj: C:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/PE.cpp
 CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj -MF CMakeFiles\ArregloSist_licoNPU.dir\src\PE.cpp.obj.d -o CMakeFiles\ArregloSist_licoNPU.dir\src\PE.cpp.obj -c C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\PE.cpp
 
 CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.i: cmake_force
@@ -102,7 +117,7 @@ CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj: CMakeFiles/Arreglo
 CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/includes_CXX.rsp
 CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj: C:/Users/alero/Documents/Github/ArregloSist-licoNPU/src/SystolicArray.cpp
 CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj -MF CMakeFiles\ArregloSist_licoNPU.dir\src\SystolicArray.cpp.obj.d -o CMakeFiles\ArregloSist_licoNPU.dir\src\SystolicArray.cpp.obj -c C:\Users\alero\Documents\Github\ArregloSist-licoNPU\src\SystolicArray.cpp
 
 CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.i: cmake_force
@@ -117,7 +132,7 @@ CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj: CMakeFiles/ArregloSist_li
 CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/includes_CXX.rsp
 CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj: C:/Users/alero/Documents/Github/ArregloSist-licoNPU/tests/main.cpp
 CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj: CMakeFiles/ArregloSist_licoNPU.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj -MF CMakeFiles\ArregloSist_licoNPU.dir\tests\main.cpp.obj.d -o CMakeFiles\ArregloSist_licoNPU.dir\tests\main.cpp.obj -c C:\Users\alero\Documents\Github\ArregloSist-licoNPU\tests\main.cpp
 
 CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.i: cmake_force
@@ -131,6 +146,7 @@ CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.s: cmake_force
 # Object files for target ArregloSist_licoNPU
 ArregloSist_licoNPU_OBJECTS = \
 "CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.obj" \
+"CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj" \
 "CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj" \
 "CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj" \
 "CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj"
@@ -139,6 +155,7 @@ ArregloSist_licoNPU_OBJECTS = \
 ArregloSist_licoNPU_EXTERNAL_OBJECTS =
 
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.obj
+ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/src/PE.cpp.obj
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/src/SystolicArray.cpp.obj
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/tests/main.cpp.obj
@@ -146,7 +163,7 @@ ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/build.make
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/linkLibs.rsp
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/objects1.rsp
 ArregloSist_licoNPU.exe: CMakeFiles/ArregloSist_licoNPU.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ArregloSist_licoNPU.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\alero\Documents\Github\ArregloSist-licoNPU\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ArregloSist_licoNPU.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ArregloSist_licoNPU.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

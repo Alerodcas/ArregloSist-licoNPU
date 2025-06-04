@@ -152,6 +152,30 @@ src/Controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArregloSist_licoNPU.dir\build.make CMakeFiles/ArregloSist_licoNPU.dir/src/Controller.cpp.s
 .PHONY : src/Controller.cpp.s
 
+src/Memory.obj: src/Memory.cpp.obj
+.PHONY : src/Memory.obj
+
+# target to build an object file
+src/Memory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArregloSist_licoNPU.dir\build.make CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.obj
+.PHONY : src/Memory.cpp.obj
+
+src/Memory.i: src/Memory.cpp.i
+.PHONY : src/Memory.i
+
+# target to preprocess a source file
+src/Memory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArregloSist_licoNPU.dir\build.make CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.i
+.PHONY : src/Memory.cpp.i
+
+src/Memory.s: src/Memory.cpp.s
+.PHONY : src/Memory.s
+
+# target to generate assembly for a file
+src/Memory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ArregloSist_licoNPU.dir\build.make CMakeFiles/ArregloSist_licoNPU.dir/src/Memory.cpp.s
+.PHONY : src/Memory.cpp.s
+
 src/PE.obj: src/PE.cpp.obj
 .PHONY : src/PE.obj
 
@@ -236,6 +260,9 @@ help:
 	@echo ... src/Controller.obj
 	@echo ... src/Controller.i
 	@echo ... src/Controller.s
+	@echo ... src/Memory.obj
+	@echo ... src/Memory.i
+	@echo ... src/Memory.s
 	@echo ... src/PE.obj
 	@echo ... src/PE.i
 	@echo ... src/PE.s
