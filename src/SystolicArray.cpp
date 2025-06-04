@@ -1,5 +1,7 @@
 #include "SystolicArray.h"
 
+#include "Controller.h"
+
 void SystolicArray::reset() {
     for (auto& row : pes)
         for (auto& pe : row)
@@ -17,6 +19,11 @@ void SystolicArray::print_result() const {
         std::cout << "\n";
     }
 }
+
+const SystolicArray& Controller::get_systolic_array() const {
+    return systolic;
+}
+
 
 void SystolicArray::tick_cycle(const std::array<std::array<Word, N>, N>& A,
                                const std::array<std::array<Word, N>, N>& B,

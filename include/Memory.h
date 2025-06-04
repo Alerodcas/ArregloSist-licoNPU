@@ -35,6 +35,7 @@ public:
     bool is_busy() const;
 
     void dump(int start = 0, int count = 16) const; //Para debug
+    Word read(int addr) const;
 };
 
 #endif // MEMORY_H

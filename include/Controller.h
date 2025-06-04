@@ -62,9 +62,8 @@ public:
 
     void write_register(Register reg, Word value);
     Word read_register(Register reg) const;
-    SystolicArray get_systolic_array() const {
-        return systolic;
-    }
+    const SystolicArray& get_systolic_array() const;
+
 
 };
 

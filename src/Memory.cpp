@@ -59,3 +59,10 @@ void Memory::dump(int start, int count) const {
         std::cout << "[" << std::setw(3) << addr << "] = " << std::setw(6) << data[addr] << "\n";
     }
 }
+
+//Solo para pruebas, no toma en cuenta latencia
+Word Memory::read(int addr) const {
+    if (addr < 0 || addr >= static_cast<int>(data.size()))
+        throw std::out_of_range("Read address out of range");
+    return data[addr];
+}
