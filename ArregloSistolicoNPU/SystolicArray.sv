@@ -1,0 +1,61 @@
+module SystolicArray #(
+    parameter N = 4,
+    parameter WIDTH = 16
+) (
+    input logic clk,
+    input logic rst,
+    input logic [N-1:0][N-1:0][WIDTH-1:0] A,
+    input logic [N-1:0][N-1:0][WIDTH-1:0] B,
+    input logic [31:0] current_cycle,
+    input logic activate_results,
+    input logic [1:0] activation_mode,
+    output logic [N-1:0][N-1:0][WIDTH-1:0] C
+);
+
+    logic [N-1:0][N-1:0][WIDTH-1:0] a_in, b_in, a_out, b_out, pe_result;
+
+    genvar i, j;
+    generate
+        for (i = 0; i < N; i++) begin : row
+            for (j = 0; j < N; j++) begin : col
+                PE #(.DATA_WIDTH(WIDTH)) pe_inst (
+                    .clk(clk),
+                    .rst(rst),
+                    .a_in(a_in[i][j]),
+                    .b_in(b_in[i][j]),
+                    .a_out(a_out[i][j]),
+                    .b_out(b_out[i][j]),
+                    .activation_mode(activation_mode),
+                    .enable(activate_results),
+                    .result(pe_result[i][j])
+                );
+            end
+        end
+    endgenerate
+
+    // Wires to control dataflow (tick_cycle logic)
+    always_comb begin
+        for (int i = 0; i < N; ++i) begin
+            for (int j = 0; j < N; ++j) begin
+                // A input: izquierda
+                if (j == 0 && current_cycle - i >= 0 && current_cycle - i < N)
+                    a_in[i][j] = A[i][current_cycle - i];
+                else if (j > 0)
+                    a_in[i][j] = a_out[i][j - 1];
+                else
+                    a_in[i][j] = '0;
+
+                // B input: arriba
+                if (i == 0 && current_cycle - j >= 0 && current_cycle - j < N)
+                    b_in[i][j] = B[current_cycle - j][j];
+                else if (i > 0)
+                    b_in[i][j] = b_out[i - 1][j];
+                else
+                    b_in[i][j] = '0;
+            end
+        end
+    end
+
+    assign C = pe_result;
+
+endmodule

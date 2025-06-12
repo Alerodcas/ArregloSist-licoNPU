@@ -1,0 +1,426 @@
+$date
+	Thu Jun 12 16:43:05 2025
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module PEs_tb $end
+$var parameter 32 ! DATA_WIDTH $end
+$var reg 1 " clk $end
+$var reg 1 # rst $end
+$var reg 1 $ enable $end
+$var reg 16 % a_in [15:0] $end
+$var reg 16 & b_in [15:0] $end
+$var reg 2 ' activation_mode [1:0] $end
+$var reg 16 ( a_out [15:0] $end
+$var reg 16 ) b_out [15:0] $end
+$var reg 16 * result [15:0] $end
+
+$scope task tick $end
+$upscope $end
+
+$scope task send_input $end
+$var reg 16 + a [15:0] $end
+$var reg 16 , b [15:0] $end
+$upscope $end
+
+$scope module dut $end
+$var parameter 32 - DATA_WIDTH $end
+$var wire 1 . clk $end
+$var wire 1 / rst $end
+$var wire 1 0 a_in [15] $end
+$var wire 1 1 a_in [14] $end
+$var wire 1 2 a_in [13] $end
+$var wire 1 3 a_in [12] $end
+$var wire 1 4 a_in [11] $end
+$var wire 1 5 a_in [10] $end
+$var wire 1 6 a_in [9] $end
+$var wire 1 7 a_in [8] $end
+$var wire 1 8 a_in [7] $end
+$var wire 1 9 a_in [6] $end
+$var wire 1 : a_in [5] $end
+$var wire 1 ; a_in [4] $end
+$var wire 1 < a_in [3] $end
+$var wire 1 = a_in [2] $end
+$var wire 1 > a_in [1] $end
+$var wire 1 ? a_in [0] $end
+$var wire 1 @ b_in [15] $end
+$var wire 1 A b_in [14] $end
+$var wire 1 B b_in [13] $end
+$var wire 1 C b_in [12] $end
+$var wire 1 D b_in [11] $end
+$var wire 1 E b_in [10] $end
+$var wire 1 F b_in [9] $end
+$var wire 1 G b_in [8] $end
+$var wire 1 H b_in [7] $end
+$var wire 1 I b_in [6] $end
+$var wire 1 J b_in [5] $end
+$var wire 1 K b_in [4] $end
+$var wire 1 L b_in [3] $end
+$var wire 1 M b_in [2] $end
+$var wire 1 N b_in [1] $end
+$var wire 1 O b_in [0] $end
+$var wire 1 P activation_mode [1] $end
+$var wire 1 Q activation_mode [0] $end
+$var wire 1 R enable $end
+$var reg 16 S a_out [15:0] $end
+$var reg 16 T b_out [15:0] $end
+$var reg 16 U result [15:0] $end
+$var reg 16 V a_reg [15:0] $end
+$var reg 16 W b_reg [15:0] $end
+$var reg 32 X acc_raw [31:0] $end
+$var reg 16 Y acc [15:0] $end
+
+$scope function tanh_approx $end
+$var reg 16 Z tanh_approx [15:0] $end
+$var reg 16 [ x [15:0] $end
+$var reg 16 \ y [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+1#
+0$
+b0 %
+b0 &
+b0 '
+b0 (
+b0 )
+b0 *
+b0 S
+b0 T
+b0 U
+b0 V
+b0 W
+b0 X
+b0 Y
+bx Z
+bx [
+bx \
+bx +
+bx ,
+b10000 !
+b10000 -
+0.
+1/
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0Q
+0P
+0R
+$end
+#5000
+1"
+1.
+0#
+b11 +
+b100 ,
+b11 %
+b100 &
+1$
+1M
+1?
+1>
+1R
+0/
+#10000
+0"
+0.
+#15000
+1"
+1.
+0$
+b1111111111111110 +
+b101 ,
+b1111111111111110 %
+b101 &
+1$
+1O
+0?
+1=
+1<
+1;
+1:
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+b11 V
+b100 W
+b1100 X
+b100 T
+b11 S
+b11 (
+b100 )
+b1100 Y
+b1100 U
+b1100 *
+#20000
+0"
+0.
+#25000
+1"
+1.
+0$
+b111 +
+b1111111111111111 ,
+b111 %
+b1111111111111111 &
+1$
+1N
+1L
+1K
+1J
+1I
+1H
+1G
+1F
+1E
+1D
+1C
+1B
+1A
+1@
+1?
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+b1111111111111110 V
+b101 W
+b10 X
+b101 T
+b1111111111111110 S
+b1111111111111110 (
+b101 )
+b10 Y
+b10 U
+b10 *
+#30000
+0"
+0.
+#35000
+1"
+1.
+0$
+0R
+b111 V
+b1111111111111111 W
+b11111111111111111111111111111011 X
+b1111111111111111 T
+b111 S
+b111 (
+b1111111111111111 )
+b0 Y
+b0 U
+b0 *
+#40000
+0"
+0.
+#45000
+1"
+1.
+1#
+1/
+b0 V
+b0 W
+b0 X
+b0 T
+b0 S
+b0 (
+b0 )
+#50000
+0"
+0.
+#55000
+1"
+1.
+0#
+b11 +
+b10 ,
+b11 %
+b10 &
+1$
+0O
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0=
+1R
+0/
+#60000
+0"
+0.
+#65000
+1"
+1.
+0$
+b100 +
+b1 ,
+b100 %
+b1 &
+1$
+1O
+0N
+0?
+0>
+1=
+b11 V
+b10 W
+b110 X
+b10 T
+b11 S
+b11 (
+b10 )
+b110 Y
+b110 U
+b110 *
+#70000
+0"
+0.
+#75000
+1"
+1.
+0$
+b1 '
+0R
+1Q
+b100 V
+b1 W
+b1010 X
+b1 T
+b100 S
+b100 (
+b1 )
+b1010 Y
+b1010 U
+b1010 *
+#80000
+0"
+0.
+#85000
+1"
+1.
+1#
+1/
+b0 V
+b0 W
+b0 X
+b0 T
+b0 S
+b0 (
+b0 )
+b0 Y
+b0 U
+b0 *
+#90000
+0"
+0.
+#95000
+1"
+1.
+0#
+b1010000 +
+b1010000 %
+1$
+0=
+1;
+19
+1R
+0/
+#100000
+0"
+0.
+#105000
+1"
+1.
+0$
+b10 '
+0R
+0Q
+1P
+b0 [
+b0 \
+b0 Z
+b1010000 V
+b1 W
+b1010000 X
+b1 T
+b1010000 S
+b1010000 (
+b1 )
+b1010000 [
+b1111111 \
+b1111111 Z
+b1111111 Y
+b1111111 U
+b1111111 *
+#110000
+0"
+0.
+#115000
+1"
+1.

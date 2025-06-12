@@ -1,0 +1,115 @@
+`timescale 1ns / 1ps
+
+module Memory_tb;
+
+    parameter DATA_WIDTH = 16;
+    parameter ADDR_WIDTH = 4;    // 16 posiciones
+    parameter LATENCY    = 3;
+
+    // Señales DUT
+    logic clk;
+    logic rst;
+
+    logic req_valid;
+    logic req_write;
+    logic [ADDR_WIDTH-1:0] req_addr;
+    logic signed [DATA_WIDTH-1:0] req_data;
+
+    logic resp_valid;
+    logic signed [DATA_WIDTH-1:0] resp_data;
+
+    // Instancia del módulo
+    Memory #(
+        .DATA_WIDTH(DATA_WIDTH),
+        .ADDR_WIDTH(ADDR_WIDTH),
+        .LATENCY(LATENCY)
+    ) dut (
+        .clk(clk),
+        .rst(rst),
+        .req_valid(req_valid),
+        .req_write(req_write),
+        .req_addr(req_addr),
+        .req_data(req_data),
+        .resp_valid(resp_valid),
+        .resp_data(resp_data)
+    );
+
+    // Reloj de 10ns
+    always #5 clk = ~clk;
+
+    // Utilidades
+    task tick();
+        @(posedge clk);
+    endtask
+
+    task reset();
+        rst = 1;
+        tick();
+        rst = 0;
+        tick();
+    endtask
+
+    // Prueba de escritura seguida de lectura
+    initial begin
+        $display("Inicio de simulación");
+        $dumpfile("Memory_tb.vcd");
+        $dumpvars(0, Memory_tb);
+
+        clk = 0;
+        rst = 0;
+        req_valid = 0;
+        req_write = 0;
+        req_addr = 0;
+        req_data = 0;
+
+        reset();
+
+        // ---------------------
+        // Escribir 42 en addr 5
+        // ---------------------
+        @(negedge clk);
+        req_valid = 1;
+        req_write = 1;
+        req_addr = 5;
+        req_data = 42;
+        $display("[%0t] Solicita escritura: addr=5, valor=42", $time);
+        tick();  // solicitud se captura
+
+        req_valid = 0;
+        req_write = 0;
+
+        // Esperar latencia
+        repeat (LATENCY) tick();
+        $display("[%0t] Escritura completada", $time);
+
+        // ---------------------
+        // Leer desde addr 5
+        // ---------------------
+        @(negedge clk);
+        req_valid = 1;
+        req_write = 0;
+        req_addr = 5;
+        $display("[%0t] Solicita lectura: addr=5", $time);
+        tick();
+
+        req_valid = 0;
+
+        // Esperar latencia
+        repeat (LATENCY) begin
+            tick();
+            if (resp_valid) begin
+                $display("[%0t] Dato disponible: %0d", $time, resp_data);
+            end
+        end
+
+        // Validar valor
+        if (resp_valid && resp_data == 42)
+            $display("[✔] Lectura correcta: 42");
+        else
+            $display("[✘] Lectura incorrecta: %0d", resp_data);
+
+        $display("Fin de simulación");
+        $finish;
+    end
+
+endmodule

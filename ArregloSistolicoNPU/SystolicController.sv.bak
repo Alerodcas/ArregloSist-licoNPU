@@ -1,0 +1,167 @@
+// Systolic Controller en SystemVerilog
+// FSM que controla la carga, ejecución y escritura de un arreglo sistólico
+
+module SystolicController #(
+    parameter N = 4,                      // Tamaño del arreglo (NxN)
+    parameter ADDR_WIDTH = 10,
+    parameter DATA_WIDTH = 16,
+    parameter LATENCY = 3                // Latencia simulada para memoria
+)(
+    input  logic                      clk,
+    input  logic                      rst,
+
+    // Interfaz de control (tipo CPU)
+    input  logic                      ctrl_valid,
+    input  logic [3:0]                ctrl_addr,    // Dirección del registro
+    input  logic                      ctrl_write,
+    input  logic [DATA_WIDTH-1:0]     ctrl_wdata,
+    output logic [DATA_WIDTH-1:0]     ctrl_rdata,
+
+    // Señales a memoria
+    output logic                      mem_req_valid,
+    output logic                      mem_req_write,
+    output logic [ADDR_WIDTH-1:0]     mem_req_addr,
+    output logic [DATA_WIDTH-1:0]     mem_req_data,
+    input  logic                      mem_resp_valid,
+    input  logic [DATA_WIDTH-1:0]     mem_resp_data,
+    input  logic                      mem_busy,
+
+    // Señal a arreglo sistólico
+    output logic                      pe_tick,
+    output logic                      activate,
+    output logic [$clog2(N)-1:0]      pe_row,
+    output logic [$clog2(N)-1:0]      pe_col,
+    output logic                      done
+);
+
+    // === Registros de control ===
+    typedef enum logic [3:0] {
+        REG_ADDR_A = 4'd0,
+        REG_ADDR_B = 4'd1,
+        REG_ADDR_C = 4'd2,
+        REG_ACTIVATION_MODE = 4'd3,
+        REG_CONTROL = 4'd4,
+        REG_STATUS = 4'd5,
+        REG_CYCLE_COUNT = 4'd6,
+        REG_MUL_COUNT = 4'd7
+    } reg_addr_t;
+
+    logic [DATA_WIDTH-1:0] registers [0:7];
+
+    // === FSM de ejecución ===
+    typedef enum logic [2:0] {
+        IDLE, LOAD_A, LOAD_B, WAIT_B, EXECUTE, STORE_C, DONE
+    } phase_t;
+    phase_t phase;
+
+    logic [$clog2(N):0] row, col;
+    logic [$clog2(N*N):0] cycle_count;
+    logic [$clog2(N*N):0] exec_cycles;
+
+    // === Control de registros ===
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (int i = 0; i < 8; i++) registers[i] <= 0;
+            phase <= IDLE;
+            row <= 0; col <= 0;
+            cycle_count <= 0;
+            exec_cycles <= 2*N + N - 2; // ciclos requeridos
+        end else begin
+            if (ctrl_valid && ctrl_write) begin
+                registers[ctrl_addr] <= ctrl_wdata;
+
+                if (ctrl_addr == REG_CONTROL) begin
+                    if (ctrl_wdata[0]) phase <= LOAD_A; // Bit 0 = run
+                end
+            end
+        end
+    end
+
+    assign ctrl_rdata = registers[ctrl_addr];
+
+    // === FSM principal ===
+    always_ff @(posedge clk) begin
+        pe_tick <= 0;
+        mem_req_valid <= 0;
+        mem_req_write <= 0;
+        mem_req_addr  <= 0;
+        mem_req_data  <= 0;
+        activate <= 0;
+
+        case (phase)
+            IDLE: begin
+                row <= 0; col <= 0;
+                cycle_count <= 0;
+                done <= 0;
+            end
+
+            LOAD_A: begin
+                if (!mem_busy) begin
+                    mem_req_valid <= 1;
+                    mem_req_write <= 0;
+                    mem_req_addr <= registers[REG_ADDR_A] + row * N + col;
+                    phase <= LOAD_B;
+                end
+            end
+
+            LOAD_B: begin
+                if (mem_resp_valid) begin
+                    mem_req_valid <= 1;
+                    mem_req_write <= 0;
+                    mem_req_addr <= registers[REG_ADDR_B] + row * N + col;
+                    phase <= WAIT_B;
+                end
+            end
+
+            WAIT_B: begin
+                if (mem_resp_valid) begin
+                    col <= col + 1;
+                    if (col == N-1) begin
+                        col <= 0;
+                        row <= row + 1;
+                        if (row == N-1) phase <= EXECUTE;
+                        else phase <= LOAD_A;
+                    end else phase <= LOAD_A;
+                end
+            end
+
+            EXECUTE: begin
+                if (cycle_count < exec_cycles) begin
+                    pe_tick <= 1;
+                    cycle_count <= cycle_count + 1;
+                    registers[REG_MUL_COUNT] <= registers[REG_MUL_COUNT] + N*N;
+                end else begin
+                    row <= 0; col <= 0;
+                    phase <= STORE_C;
+                    activate <= 1;
+                end
+            end
+
+            STORE_C: begin
+                if (!mem_busy) begin
+                    mem_req_valid <= 1;
+                    mem_req_write <= 1;
+                    mem_req_addr  <= registers[REG_ADDR_C] + row * N + col;
+                    mem_req_data  <= '0; // Aquí se debe conectar a PE real
+                    col <= col + 1;
+                    if (col == N) begin
+                        col <= 0; row <= row + 1;
+                    end
+                    if (row == N && col == 0) begin
+                        phase <= DONE;
+                        registers[REG_STATUS] <= 2;
+                        done <= 1;
+                    end
+                end
+            end
+
+            DONE: begin
+                // Nada
+            end
+        endcase
+
+        // Contador global
+        registers[REG_CYCLE_COUNT] <= registers[REG_CYCLE_COUNT] + 1;
+    end
+
+endmodule

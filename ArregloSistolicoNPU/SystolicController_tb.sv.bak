@@ -1,0 +1,101 @@
+// Testbench para SystolicController
+`timescale 1ns / 1ps
+
+module SystolicController_tb;
+
+    parameter N = 4;
+    parameter DATA_WIDTH = 16;
+    parameter ADDR_WIDTH = 10;
+
+    logic clk, rst;
+    logic ctrl_valid, ctrl_write;
+    logic [3:0] ctrl_addr;
+    logic [DATA_WIDTH-1:0] ctrl_wdata;
+    logic [DATA_WIDTH-1:0] ctrl_rdata;
+
+    logic mem_req_valid, mem_req_write;
+    logic [ADDR_WIDTH-1:0] mem_req_addr;
+    logic [DATA_WIDTH-1:0] mem_req_data;
+    logic mem_resp_valid;
+    logic [DATA_WIDTH-1:0] mem_resp_data;
+    logic mem_busy;
+
+    logic pe_tick, activate, done;
+    logic [$clog2(N)-1:0] pe_row, pe_col;
+
+    // Instancia del controlador
+    SystolicController #(
+        .N(N),
+        .ADDR_WIDTH(ADDR_WIDTH),
+        .DATA_WIDTH(DATA_WIDTH)
+    ) dut (
+        .clk(clk),
+        .rst(rst),
+        .ctrl_valid(ctrl_valid),
+        .ctrl_addr(ctrl_addr),
+        .ctrl_write(ctrl_write),
+        .ctrl_wdata(ctrl_wdata),
+        .ctrl_rdata(ctrl_rdata),
+        .mem_req_valid(mem_req_valid),
+        .mem_req_write(mem_req_write),
+        .mem_req_addr(mem_req_addr),
+        .mem_req_data(mem_req_data),
+        .mem_resp_valid(mem_resp_valid),
+        .mem_resp_data(mem_resp_data),
+        .mem_busy(mem_busy),
+        .pe_tick(pe_tick),
+        .activate(activate),
+        .pe_row(pe_row),
+        .pe_col(pe_col),
+        .done(done)
+    );
+
+    // Simulación de reloj
+    always #5 clk = ~clk;
+
+    initial begin
+        $display("Inicio de simulación");
+        $dumpfile("systolic_controller_tb.vcd");
+        $dumpvars(0, SystolicController_tb);
+
+        // Inicialización
+        clk = 0;
+        rst = 1;
+        ctrl_valid = 0;
+        ctrl_write = 0;
+        ctrl_addr = 0;
+        ctrl_wdata = 0;
+
+        mem_resp_valid = 0;
+        mem_resp_data = 0;
+        mem_busy = 0;
+
+        #10 rst = 0;
+
+        // Configurar direcciones y modo de activación
+        write_reg(4'd0, 10); // REG_ADDR_A
+        write_reg(4'd1, 100); // REG_ADDR_B
+        write_reg(4'd2, 200); // REG_ADDR_C
+        write_reg(4'd3, 0);   // REG_ACTIVATION_MODE (RELU)
+
+        // Iniciar ejecución
+        write_reg(4'd4, 1); // REG_CONTROL: bit 0 = run
+
+        repeat (200) @(posedge clk);
+
+        $display("Fin de simulación");
+        $finish;
+    end
+
+    task write_reg(input [3:0] addr, input [DATA_WIDTH-1:0] val);
+        @(posedge clk);
+        ctrl_valid <= 1;
+        ctrl_write <= 1;
+        ctrl_addr  <= addr;
+        ctrl_wdata <= val;
+        @(posedge clk);
+        ctrl_valid <= 0;
+        ctrl_write <= 0;
+    endtask
+
+endmodule

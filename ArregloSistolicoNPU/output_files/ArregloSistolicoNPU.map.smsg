@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at SystolicController_tb.sv(56): always construct contains both blocking and non-blocking assignments File: C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/SystolicController_tb.sv Line: 56

@@ -1,0 +1,119 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/simulation/modelsim
+vArregloSistolicoNPU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1749771864
+!i10b 1
+!s100 PU1`HHeX^0DT;8f>G^zZU2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I92VG6nVb37PSagZ?WV1F92
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1749771806
+8C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU.sv
+FC:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU.sv
+!i122 0
+L0 1 60
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1749771864.000000
+!s107 C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU|C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU}
+Z9 tCvgOpt 0
+n@arreglo@sistolico@n@p@u
+vArregloSistolicoNPU_tb
+R1
+!s110 1749771865
+!i10b 1
+!s100 fD;bKQdKKOXH;U<?3iSH73
+R3
+IgAGd`WQ]mQKc3RngB2ahE1
+R4
+S1
+R0
+w1749771627
+8C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU_tb.sv
+FC:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU_tb.sv
+!i122 3
+L0 2 66
+R5
+r1
+!s85 0
+31
+!s108 1749771865.000000
+!s107 C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU|C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/ArregloSistolicoNPU_tb.sv|
+!i113 1
+R7
+R8
+R9
+n@arreglo@sistolico@n@p@u_tb
+vMemory
+R1
+R2
+!i10b 1
+!s100 0kU9D]lQdI[RP_5QgnfXJ2
+R3
+IQ=d1`Y>4Caa?[1EhMgP162
+R4
+S1
+R0
+w1749767648
+8C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/Memory.sv
+FC:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/Memory.sv
+!i122 1
+L0 1 74
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/Memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU|C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/Memory.sv|
+!i113 1
+R7
+R8
+R9
+n@memory
+vSystolicController
+R1
+R2
+!i10b 1
+!s100 EZX?a;_ZU8@ENoPkDXF`<3
+R3
+IfBjc8F1d_DO5gCIREljJz2
+R4
+S1
+R0
+w1749769399
+8C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/SystolicController.sv
+FC:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/SystolicController.sv
+!i122 2
+L0 4 146
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/SystolicController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU|C:/Users/nicva/Arquitectura_II/Proyecto_2_Arqui II/ArregloSist-licoNPU/ArregloSistolicoNPU/SystolicController.sv|
+!i113 1
+R7
+R8
+R9
+n@systolic@controller
