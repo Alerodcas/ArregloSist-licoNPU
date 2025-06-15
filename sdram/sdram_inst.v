@@ -1,23 +1,23 @@
 	sdram u0 (
-		.clk_clk                                 (<connected-to-clk_clk>),                                 //                         clk.clk
-		.reset_reset_n                           (<connected-to-reset_reset_n>),                           //                       reset.reset_n
-		.new_sdram_controller_0_s1_address       (<connected-to-new_sdram_controller_0_s1_address>),       //   new_sdram_controller_0_s1.address
-		.new_sdram_controller_0_s1_byteenable_n  (<connected-to-new_sdram_controller_0_s1_byteenable_n>),  //                            .byteenable_n
-		.new_sdram_controller_0_s1_chipselect    (<connected-to-new_sdram_controller_0_s1_chipselect>),    //                            .chipselect
-		.new_sdram_controller_0_s1_writedata     (<connected-to-new_sdram_controller_0_s1_writedata>),     //                            .writedata
-		.new_sdram_controller_0_s1_read_n        (<connected-to-new_sdram_controller_0_s1_read_n>),        //                            .read_n
-		.new_sdram_controller_0_s1_write_n       (<connected-to-new_sdram_controller_0_s1_write_n>),       //                            .write_n
-		.new_sdram_controller_0_s1_readdata      (<connected-to-new_sdram_controller_0_s1_readdata>),      //                            .readdata
-		.new_sdram_controller_0_s1_readdatavalid (<connected-to-new_sdram_controller_0_s1_readdatavalid>), //                            .readdatavalid
-		.new_sdram_controller_0_s1_waitrequest   (<connected-to-new_sdram_controller_0_s1_waitrequest>),   //                            .waitrequest
-		.new_sdram_controller_0_wire_addr        (<connected-to-new_sdram_controller_0_wire_addr>),        // new_sdram_controller_0_wire.addr
-		.new_sdram_controller_0_wire_ba          (<connected-to-new_sdram_controller_0_wire_ba>),          //                            .ba
-		.new_sdram_controller_0_wire_cas_n       (<connected-to-new_sdram_controller_0_wire_cas_n>),       //                            .cas_n
-		.new_sdram_controller_0_wire_cke         (<connected-to-new_sdram_controller_0_wire_cke>),         //                            .cke
-		.new_sdram_controller_0_wire_cs_n        (<connected-to-new_sdram_controller_0_wire_cs_n>),        //                            .cs_n
-		.new_sdram_controller_0_wire_dq          (<connected-to-new_sdram_controller_0_wire_dq>),          //                            .dq
-		.new_sdram_controller_0_wire_dqm         (<connected-to-new_sdram_controller_0_wire_dqm>),         //                            .dqm
-		.new_sdram_controller_0_wire_ras_n       (<connected-to-new_sdram_controller_0_wire_ras_n>),       //                            .ras_n
-		.new_sdram_controller_0_wire_we_n        (<connected-to-new_sdram_controller_0_wire_we_n>)         //                            .we_n
+		.clk_clk             (<connected-to-clk_clk>),             //   clk.clk
+		.reset_reset_n       (<connected-to-reset_reset_n>),       // reset.reset_n
+		.wire_addr           (<connected-to-wire_addr>),           //  wire.addr
+		.wire_ba             (<connected-to-wire_ba>),             //      .ba
+		.wire_cas_n          (<connected-to-wire_cas_n>),          //      .cas_n
+		.wire_cke            (<connected-to-wire_cke>),            //      .cke
+		.wire_cs_n           (<connected-to-wire_cs_n>),           //      .cs_n
+		.wire_dq             (<connected-to-wire_dq>),             //      .dq
+		.wire_dqm            (<connected-to-wire_dqm>),            //      .dqm
+		.wire_ras_n          (<connected-to-wire_ras_n>),          //      .ras_n
+		.wire_we_n           (<connected-to-wire_we_n>),           //      .we_n
+		.sdram_address       (<connected-to-sdram_address>),       // sdram.address
+		.sdram_byteenable_n  (<connected-to-sdram_byteenable_n>),  //      .byteenable_n
+		.sdram_chipselect    (<connected-to-sdram_chipselect>),    //      .chipselect
+		.sdram_writedata     (<connected-to-sdram_writedata>),     //      .writedata
+		.sdram_read_n        (<connected-to-sdram_read_n>),        //      .read_n
+		.sdram_write_n       (<connected-to-sdram_write_n>),       //      .write_n
+		.sdram_readdata      (<connected-to-sdram_readdata>),      //      .readdata
+		.sdram_readdatavalid (<connected-to-sdram_readdatavalid>), //      .readdatavalid
+		.sdram_waitrequest   (<connected-to-sdram_waitrequest>)    //      .waitrequest
 	);
 

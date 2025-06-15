@@ -1,0 +1,370 @@
+$date
+	Sun Jun 15 10:01:41 2025
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module peTestbench $end
+$var parameter 32 ! wA $end
+$var parameter 32 " wP $end
+$var parameter 32 # CLOCK_PERIOD $end
+$var reg 1 $ clk $end
+$var reg 1 % rstN $end
+$var reg 16 & inA [15:0] $end
+$var reg 16 ' inB [15:0] $end
+$var reg 1 ( loadA $end
+$var reg 1 ) loadB $end
+$var reg 16 * shiftAIn [15:0] $end
+$var reg 16 + shiftBIn [15:0] $end
+$var reg 16 , shiftAOut [15:0] $end
+$var reg 16 - shiftBOut [15:0] $end
+$var reg 32 . psumOut [31:0] $end
+
+$scope module dut $end
+$var parameter 32 / wA $end
+$var parameter 32 0 wP $end
+$var wire 1 1 clk $end
+$var wire 1 2 rstN $end
+$var wire 1 3 inA [15] $end
+$var wire 1 4 inA [14] $end
+$var wire 1 5 inA [13] $end
+$var wire 1 6 inA [12] $end
+$var wire 1 7 inA [11] $end
+$var wire 1 8 inA [10] $end
+$var wire 1 9 inA [9] $end
+$var wire 1 : inA [8] $end
+$var wire 1 ; inA [7] $end
+$var wire 1 < inA [6] $end
+$var wire 1 = inA [5] $end
+$var wire 1 > inA [4] $end
+$var wire 1 ? inA [3] $end
+$var wire 1 @ inA [2] $end
+$var wire 1 A inA [1] $end
+$var wire 1 B inA [0] $end
+$var wire 1 C inB [15] $end
+$var wire 1 D inB [14] $end
+$var wire 1 E inB [13] $end
+$var wire 1 F inB [12] $end
+$var wire 1 G inB [11] $end
+$var wire 1 H inB [10] $end
+$var wire 1 I inB [9] $end
+$var wire 1 J inB [8] $end
+$var wire 1 K inB [7] $end
+$var wire 1 L inB [6] $end
+$var wire 1 M inB [5] $end
+$var wire 1 N inB [4] $end
+$var wire 1 O inB [3] $end
+$var wire 1 P inB [2] $end
+$var wire 1 Q inB [1] $end
+$var wire 1 R inB [0] $end
+$var wire 1 S loadA $end
+$var wire 1 T loadB $end
+$var wire 1 U shiftAIn [15] $end
+$var wire 1 V shiftAIn [14] $end
+$var wire 1 W shiftAIn [13] $end
+$var wire 1 X shiftAIn [12] $end
+$var wire 1 Y shiftAIn [11] $end
+$var wire 1 Z shiftAIn [10] $end
+$var wire 1 [ shiftAIn [9] $end
+$var wire 1 \ shiftAIn [8] $end
+$var wire 1 ] shiftAIn [7] $end
+$var wire 1 ^ shiftAIn [6] $end
+$var wire 1 _ shiftAIn [5] $end
+$var wire 1 ` shiftAIn [4] $end
+$var wire 1 a shiftAIn [3] $end
+$var wire 1 b shiftAIn [2] $end
+$var wire 1 c shiftAIn [1] $end
+$var wire 1 d shiftAIn [0] $end
+$var wire 1 e shiftBIn [15] $end
+$var wire 1 f shiftBIn [14] $end
+$var wire 1 g shiftBIn [13] $end
+$var wire 1 h shiftBIn [12] $end
+$var wire 1 i shiftBIn [11] $end
+$var wire 1 j shiftBIn [10] $end
+$var wire 1 k shiftBIn [9] $end
+$var wire 1 l shiftBIn [8] $end
+$var wire 1 m shiftBIn [7] $end
+$var wire 1 n shiftBIn [6] $end
+$var wire 1 o shiftBIn [5] $end
+$var wire 1 p shiftBIn [4] $end
+$var wire 1 q shiftBIn [3] $end
+$var wire 1 r shiftBIn [2] $end
+$var wire 1 s shiftBIn [1] $end
+$var wire 1 t shiftBIn [0] $end
+$var reg 16 u shiftAOut [15:0] $end
+$var reg 16 v shiftBOut [15:0] $end
+$var reg 32 w psumOut [31:0] $end
+$var reg 16 x aReg [15:0] $end
+$var reg 16 y bReg [15:0] $end
+$var reg 32 z psumReg [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0%
+b0 &
+b0 '
+0(
+0)
+b0 *
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 u
+b0 v
+b0 w
+b0 x
+b0 y
+b0 z
+b10000 !
+b100000 "
+b1010 #
+b10000 /
+b100000 0
+01
+02
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0S
+0T
+0d
+0c
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+0t
+0s
+0r
+0q
+0p
+0o
+0n
+0m
+0l
+0k
+0j
+0i
+0h
+0g
+0f
+0e
+$end
+#5000
+1$
+11
+#10000
+1%
+b101 &
+b11 '
+1(
+1)
+0$
+1R
+1Q
+1B
+1@
+1S
+1T
+12
+01
+#15000
+1$
+11
+b101 x
+b11 y
+b11 v
+b101 u
+b101 ,
+b11 -
+#20000
+0$
+01
+#25000
+1$
+11
+b1111 z
+b1111 w
+b1111 .
+#30000
+b0 &
+b0 '
+0(
+0)
+b1010 *
+b10 +
+0$
+0S
+0T
+1s
+1c
+1a
+0R
+0Q
+0B
+0@
+01
+#35000
+1$
+11
+b1010 x
+b10 y
+b11110 z
+b11110 w
+b10 v
+b1010 u
+b1010 ,
+b10 -
+b11110 .
+#40000
+0$
+01
+#45000
+1$
+11
+b110010 z
+b110010 w
+b110010 .
+#50000
+b1111111111111111 *
+b111 +
+0$
+1t
+1r
+1d
+1b
+1`
+1_
+1^
+1]
+1\
+1[
+1Z
+1Y
+1X
+1W
+1V
+1U
+01
+#55000
+1$
+11
+b1111111111111111 x
+b111 y
+b1000110 z
+b1000110 w
+b111 v
+b1111111111111111 u
+b1111111111111111 ,
+b111 -
+b1000110 .
+#60000
+0$
+01
+#65000
+1$
+11
+b111111 z
+b111111 w
+b111111 .
+#70000
+0%
+0$
+02
+01
+b0 x
+b0 y
+b0 z
+b0 w
+b0 v
+b0 u
+b0 ,
+b0 -
+b0 .
+#75000
+1$
+11
+#80000
+0$
+01
+#85000
+1$
+11
+#90000
+1%
+b1 &
+b10 '
+1(
+1)
+0$
+1Q
+1B
+1S
+1T
+12
+01
+#95000
+1$
+11
+b1 x
+b10 y
+b10 v
+b1 u
+b1 ,
+b10 -
+#100000
+0$
+01
+#105000
+1$
+11
+b10 z
+b10 w
+b10 .

@@ -50,4 +50,3 @@ module pe #(
 	assign psumOut   = psumReg;
 
 endmodule
-
