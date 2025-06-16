@@ -1,6 +1,11 @@
 Flow report for systolicArray
+<<<<<<< Updated upstream
 Sun Jun 15 21:00:29 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+=======
+Sun Jun 15 23:27:40 2025
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+>>>>>>> Stashed changes
 
 
 ---------------------
@@ -37,6 +42,7 @@ refer to the applicable agreement for further details.
 
 
 
+<<<<<<< Updated upstream
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
@@ -60,6 +66,26 @@ refer to the applicable agreement for further details.
 ; Total PLLs                      ; 1 / 6 ( 17 % )                              ;
 ; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
+=======
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------------+------------------------------------------------+
+; Flow Status                 ; Successful - Sun Jun 15 23:27:40 2025          ;
+; Quartus Prime Version       ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name               ; systolicArray                                  ;
+; Top-level Entity Name       ; systolicController                             ;
+; Family                      ; Cyclone V                                      ;
+; Device                      ; 5CSEMA5F31C6                                   ;
+; Timing Models               ; Final                                          ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
+>>>>>>> Stashed changes
 
 
 +-----------------------------------------+
@@ -67,12 +93,17 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< Updated upstream
 ; Start date & time ; 06/15/2025 20:59:24 ;
+=======
+; Start date & time ; 06/15/2025 23:27:35 ;
+>>>>>>> Stashed changes
 ; Main task         ; Compilation         ;
 ; Revision Name     ; systolicArray       ;
 +-------------------+---------------------+
 
 
+<<<<<<< Updated upstream
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                                                         ;
 +--------------------------------------+---------------------------------------------------------+---------------+----------------+------------------------+
@@ -139,6 +170,78 @@ refer to the applicable agreement for further details.
 ; Timing Analyzer      ; Poseidón         ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Poseidón         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
+=======
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                 ;
++--------------------------------------+---------------------------------------------------------+---------------+--------------------+----------------------------+
+; Assignment Name                      ; Value                                                   ; Default Value ; Entity Name        ; Section Id                 ;
++--------------------------------------+---------------------------------------------------------+---------------+--------------------+----------------------------+
+; COMPILER_SIGNATURE_ID                ; 4930994689394.175005165528760                           ; --            ; --                 ; --                         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; systolicArrayTestbench     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; systolic_tb                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; menu_tb                    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; peTestBench                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; systolicController_tb      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                      ; --            ; --                 ; matrix_random_generator_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; systolicController_tb                                   ; --            ; --                 ; eda_simulation             ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                       ; --            ; --                 ; eda_simulation             ;
+; EDA_SIMULATION_TOOL                  ; ModelSim (SystemVerilog)                                ; <None>        ; --                 ; --                         ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                         ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_FILE                  ; systolicArrayTestbench.sv                               ; --            ; --                 ; systolicArrayTestbench     ;
+; EDA_TEST_BENCH_FILE                  ; systolic_tb.sv                                          ; --            ; --                 ; systolic_tb                ;
+; EDA_TEST_BENCH_FILE                  ; menu_tb.sv                                              ; --            ; --                 ; menu_tb                    ;
+; EDA_TEST_BENCH_FILE                  ; systolicController_tb.sv                                ; --            ; --                 ; systolicController_tb      ;
+; EDA_TEST_BENCH_FILE                  ; peTestbench.sv                                          ; --            ; --                 ; peTestbench                ;
+; EDA_TEST_BENCH_FILE                  ; matrix_random_generator_tb.sv                           ; --            ; --                 ; matrix_random_generator_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; systolicArrayTestbench                                  ; --            ; --                 ; systolicArrayTestbench     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; systolic_tb                                             ; --            ; --                 ; systolic_tb                ;
+; EDA_TEST_BENCH_MODULE_NAME           ; menu_tb                                                 ; --            ; --                 ; menu_tb                    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; systolicController_tb                                   ; --            ; --                 ; systolicController_tb      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; peTestbench                                             ; --            ; --                 ; peTestbench                ;
+; EDA_TEST_BENCH_MODULE_NAME           ; matrix_random_generator_tb                              ; --            ; --                 ; matrix_random_generator_tb ;
+; EDA_TEST_BENCH_NAME                  ; peTestbench                                             ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; systolicArrayTestbench                                  ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; systolic_tb                                             ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; matrix_random_generator_tb                              ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; menu_tb                                                 ; --            ; --                 ; eda_simulation             ;
+; EDA_TEST_BENCH_NAME                  ; systolicController_tb                                   ; --            ; --                 ; eda_simulation             ;
+; EDA_TIME_SCALE                       ; 1 ps                                                    ; --            ; --                 ; eda_simulation             ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                      ; --            ; --                 ; --                         ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                       ; --            ; --                 ; --                         ;
+; MISC_FILE                            ; sdram/synthesis/../sdram.cmp                            ; --            ; --                 ; --                         ;
+; MISC_FILE                            ; sdram/synthesis/../../sdram.qsys                        ; --            ; --                 ; --                         ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                  ; --            ; systolicController ; Top                        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                  ; --            ; systolicController ; Top                        ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                  ; --            ; systolicController ; Top                        ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                     ; --            ; --                 ; --                         ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                   ; --            ; --                 ; --                         ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                            ; --            ; --                 ; --                         ;
+; SLD_FILE                             ; sdram/synthesis/sdram.debuginfo                         ; --            ; --                 ; --                         ;
+; SLD_INFO                             ; QSYS_NAME sdram HAS_SOPCINFO 1 GENERATION_ID 1750004569 ; --            ; sdram              ; --                         ;
+; SOPCINFO_FILE                        ; sdram/synthesis/../../sdram.sopcinfo                    ; --            ; --                 ; --                         ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                      ; --            ; --                 ; --                         ;
+; TOP_LEVEL_ENTITY                     ; systolicController                                      ; systolicArray ; --                 ; --                         ;
++--------------------------------------+---------------------------------------------------------+---------------+--------------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:06     ; 1.0                     ; 4792 MB             ; 00:00:14                           ;
+; Total                  ; 00:00:06     ; --                      ; --                  ; 00:00:14                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; MSI              ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
+>>>>>>> Stashed changes
 
 
 ------------

@@ -1,0 +1,105 @@
+module systolic_tb;
+
+    localparam int N = 4;
+    localparam int wA = 16, wP = 32;
+
+    logic clk, rstN;
+    logic signed [wP-1:0] memory_in;
+    logic memory_in_valid;
+    logic [15:0] memory_in_addr;
+    logic memory_read_enable;
+    logic [15:0] memory_read_addr;
+    logic memory_write_enable;
+    logic [15:0] memory_write_addr;
+    logic signed [wP-1:0] memory_write_data;
+    logic done;
+
+    systolicArray #(.N(N), .wA(wA), .wP(wP)) dut(
+        .clk(clk), .rstN(rstN),
+        .memory_in(memory_in),
+        .memory_in_valid(memory_in_valid),
+        .memory_in_addr(memory_in_addr),
+        .memory_read_enable(memory_read_enable),
+        .memory_read_addr(memory_read_addr),
+        .memory_write_enable(memory_write_enable),
+        .memory_write_addr(memory_write_addr),
+        .memory_write_data(memory_write_data),
+        .done(done)
+    );
+
+    // Memoria simple como array
+    logic signed [wP-1:0] sim_mem[0:255];
+
+    initial clk = 0;
+    always #5 clk = ~clk;
+
+    // Prueba una matriz predefinida
+    task automatic run_test(
+        input string test_name,
+        input int A[N][N],
+        input int B[N][N],
+        input int ExpectedC[N][N]
+    );
+        int idx;
+        rstN = 0; #15; rstN = 1;
+
+        // Cargar matrices en memoria
+        for (int ii=0; ii<N; ii++) for (int jj=0; jj<N; jj++) begin
+            sim_mem[ii*N + jj]           = A[ii][jj];
+            sim_mem[N*N + ii*N + jj]    = B[ii][jj];
+        end
+
+        // Simulamos ciclo por ciclo
+        memory_in_valid = 1;
+        memory_in_addr = 0;
+        repeat (8) @(posedge clk);
+
+        memory_in_valid = 0;
+        @(posedge clk);
+
+        wait(done);
+
+        // Leer resultado
+        for (int ii=0; ii<N; ii++) begin
+            string row;
+            for (int jj=0; jj<N; jj++) begin
+                idx = ii*N + jj;
+                if (sim_mem[N*N*2 + idx] !== ExpectedC[ii][jj]) begin
+                    $display("[%s] FALLA en C[%0d][%0d]: esperado=%0d, got=%0d", test_name, ii, jj,
+                              ExpectedC[ii][jj], sim_mem[N*N*2 + idx]);
+                end
+                row = {row, sim_mem[N*N*2 + idx], "\t"};
+            end
+            $display("C[%0d]: %s", ii, row);
+        end
+
+    endtask
+
+    initial begin
+        int A[4][4], B[4][4], Cexp[4][4];
+        // Identidad
+        for (int i=0;i<4;i++) for(int j=0;j<4;j++) A[i][j] = B[i][j] = (i==j);
+        run_test("Identidad", A, B, A);
+
+        // Cero
+        for (int i=0;i<4;i++) for(int j=0;j<4;j++) A[i][j] = B[i][j] = 0;
+        run_test("Cero", A, B, A);
+
+        // Aleatorio + ReLU simetría
+        for (int i=0;i<4;i++) for(int j=0;j<4;j++) begin
+            A[i][j] = $urandom_range(-5,5);
+            B[i][j] = $urandom_range(-5,5);
+        end
+        // Computar en C++
+        int tmp[4][4];
+        for (int i=0;i<4;i++) for(int j=0;j<4;j++) begin
+            int acc = 0;
+            for (int k=0;k<4;k++) acc += A[i][k]*B[k][j];
+            tmp[i][j] = (acc>0)?acc:0;
+        end
+        run_test("Aleatorio", A, B, tmp);
+
+        $finish;
+    end
+
+endmodule

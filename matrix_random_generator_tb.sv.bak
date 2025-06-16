@@ -1,0 +1,45 @@
+module matrix_random_generator_tb;
+
+    logic clk = 0, rstN = 0, enable;
+    logic signed [31:0] matrix [4][4];
+    logic done;
+
+    // Instancia del módulo
+    matrix_random_generator #(.N(4)) uut (
+        .clk(clk),
+        .rstN(rstN),
+        .enable(enable),
+        .matrix(matrix),
+        .done(done)
+    );
+
+    // Generador de reloj
+    always #5 clk = ~clk;
+
+    initial begin
+        // Reset
+        rstN = 0;
+        enable = 0;
+        #10;
+        rstN = 1;
+
+        // Activar generación
+        #10 enable = 1;
+        #10 enable = 0;
+
+        // Esperar que termine
+        wait (done);
+
+        // Mostrar matriz
+        $display("Random Matrix:");
+        for (int i = 0; i < 4; i++) begin
+            for (int j = 0; j < 4; j++) begin
+                $write("%0d\t", matrix[i][j]);
+            end
+            $display("");
+        end
+
+        $finish;
+    end
+
+endmodule

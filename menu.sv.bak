@@ -1,0 +1,63 @@
+module menu #(
+    parameter int N = 4,
+    parameter int option = 1  // parámetro para simular selección de opción
+)(
+    input logic clk,
+    input logic rstN
+);
+
+    logic signed [31:0] A [N][N];
+    logic signed [31:0] B [N][N];
+    logic signed [31:0] R [N][N];
+    logic done;
+    logic start;
+
+    // Instancias de módulos
+    matrix_defined #(N) def_inst (.A(A), .B(B));
+    matrix_random_generator #(N) rand_inst (
+        .clk(clk), .rstN(rstN), .start(start), .matrix(R), .done(done)
+    );
+
+    // Ejecución basada en opción
+    initial begin
+        $display("==== MENU DE PRUEBAS ====");
+        $display("1. Matrices definidas (A y B)");
+        $display("2. Matrices aleatorias");
+        $display("3. Prueba automatica de matriz identidad");
+        $display("4. Prueba automatica de matriz cero");
+        $display("5. Prueba automatica de simetria A * B == B^T * A^T");
+        $display("Seleccione una opcion: %0d", option);
+
+        case (option)
+            1: begin
+                #1;
+                $display("Matriz A:");
+                print_matrix(A);
+                $display("Matriz B:");
+                print_matrix(B);
+            end
+
+            2: begin
+                start = 1;
+                wait (done);
+                $display("Matriz aleatoria:");
+                print_matrix(R);
+            end
+
+            3, 4, 5: $display("ya casi");
+
+            default: $display("Opcion invalida.");
+        endcase
+    end
+
+    // Tarea para imprimir una matriz NxN
+    task print_matrix(input logic signed [31:0] mat [N][N]);
+        for (int i = 0; i < N; i++) begin
+            for (int j = 0; j < N; j++) begin
+                $write("%0d\t", mat[i][j]);
+            end
+            $display("");
+        end
+    endtask
+
+endmodule

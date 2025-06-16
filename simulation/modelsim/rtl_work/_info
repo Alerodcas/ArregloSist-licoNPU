@@ -7,6 +7,7 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
+<<<<<<< Updated upstream
 Z0 dC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/simulation/modelsim
 vpe
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
@@ -85,3 +86,60 @@ R6
 R7
 R8
 nsystolic@array@testbench
+=======
+Z0 dC:/Users/nicva/ArregloSist-licoNPU/simulation/modelsim
+vsystolicController
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1750051684
+!i10b 1
+!s100 CJPoam2]CL=2BQ`]ZTd9z0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ISk=G>PV`9gzFCR9H5zCQj3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1750051499
+8C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv
+FC:/Users/nicva/ArregloSist-licoNPU/systolicController.sv
+!i122 0
+L0 4 146
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1750051683.000000
+!s107 C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/ArregloSist-licoNPU|C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/nicva/ArregloSist-licoNPU
+Z8 tCvgOpt 0
+nsystolic@controller
+vsystolicController_tb
+R1
+R2
+!i10b 1
+!s100 g]O9H^zMinSL3_f37HD7I1
+R3
+II;KoM<ILo07azSBLGGYhX3
+R4
+S1
+R0
+w1750051638
+8C:/Users/nicva/ArregloSist-licoNPU/systolicController_tb.sv
+FC:/Users/nicva/ArregloSist-licoNPU/systolicController_tb.sv
+!i122 1
+L0 3 122
+R5
+r1
+!s85 0
+31
+!s108 1750051684.000000
+!s107 C:/Users/nicva/ArregloSist-licoNPU/systolicController_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/nicva/ArregloSist-licoNPU|C:/Users/nicva/ArregloSist-licoNPU/systolicController_tb.sv|
+!i113 1
+R6
+R7
+R8
+nsystolic@controller_tb
+>>>>>>> Stashed changes

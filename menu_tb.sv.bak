@@ -1,0 +1,24 @@
+`timescale 1ns/1ps
+
+module menu_tb;
+
+    logic clk = 0;
+    logic rstN = 0;
+
+    // Clock generator
+    always #5 clk = ~clk;
+
+    // Instancia del módulo con opción deseada (CAMBIAR AQUI)
+    localparam int OPCION_ELEGIDA = 1;
+    menu #(.option(OPCION_ELEGIDA)) dut (
+        .clk(clk),
+        .rstN(rstN)
+    );
+
+    initial begin
+        $display("Iniciando testbench...");
+        #10 rstN = 1;
+        #100 $finish;
+    end
+
+endmodule

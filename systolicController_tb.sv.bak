@@ -1,0 +1,124 @@
+`timescale 1ns / 1ps
+
+module systolicController_tb;
+
+  // Parámetros
+  parameter N = 4;
+  parameter ADDR_WIDTH = 10;
+  parameter DATA_WIDTH = 16;
+  parameter MEM_SIZE = 1024;
+  parameter LATENCY = 3;
+
+  // Señales
+  logic clk;
+  logic rst;
+  logic start;
+  logic [1:0] activation_mode;
+  logic [ADDR_WIDTH-1:0] base_addr_A, base_addr_B, base_addr_C;
+  logic mem_req_valid;
+  logic mem_req_write;
+  logic [ADDR_WIDTH-1:0] mem_req_addr;
+  logic signed [DATA_WIDTH-1:0] mem_req_data;
+  logic mem_busy;
+  logic mem_read_valid;
+  logic signed [DATA_WIDTH-1:0] mem_read_data;
+  logic done;
+
+  // Memoria simple para prueba
+  logic signed [DATA_WIDTH-1:0] memory [0:MEM_SIZE-1];
+  int mem_latency_counter = 0;
+  logic mem_read_pending = 0;
+  logic [ADDR_WIDTH-1:0] last_read_addr;
+
+  // Instancia del DUT
+  systolicController #(
+    .N(N), .ADDR_WIDTH(ADDR_WIDTH), .DATA_WIDTH(DATA_WIDTH), .LATENCY(LATENCY)
+  ) dut (
+    .clk(clk), .rst(rst), .start(start),
+    .activation_mode(activation_mode),
+    .base_addr_A(base_addr_A), .base_addr_B(base_addr_B), .base_addr_C(base_addr_C),
+    .mem_req_valid(mem_req_valid), .mem_req_write(mem_req_write),
+    .mem_req_addr(mem_req_addr), .mem_req_data(mem_req_data),
+    .mem_busy(mem_busy), .mem_read_valid(mem_read_valid), .mem_read_data(mem_read_data),
+    .done(done)
+  );
+
+  // Reloj
+  always #5 clk = ~clk;
+
+  // Memoria simulada
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+      mem_latency_counter <= 0;
+      mem_read_pending <= 0;
+      mem_read_valid <= 0;
+      mem_busy <= 0;
+    end else begin
+      mem_read_valid <= 0;
+      if (mem_req_valid && !mem_busy) begin
+        mem_busy <= 1;
+        mem_latency_counter <= LATENCY;
+        if (!mem_req_write) begin
+          mem_read_pending <= 1;
+          last_read_addr <= mem_req_addr;
+        end else begin
+          memory[mem_req_addr] <= mem_req_data;
+        end
+      end else if (mem_latency_counter > 0) begin
+        mem_latency_counter <= mem_latency_counter - 1;
+        if (mem_latency_counter == 1 && mem_read_pending) begin
+          mem_read_data <= memory[last_read_addr];
+          mem_read_valid <= 1;
+          mem_read_pending <= 0;
+          mem_busy <= 0;
+        end else if (mem_latency_counter == 1 && !mem_read_pending) begin
+          mem_busy <= 0;
+        end
+      end
+    end
+  end
+
+  // Inicialización
+  initial begin
+    $display("Iniciando testbench de SystolicController...");
+    $dumpfile("controller_tb.vcd");
+    $dumpvars(0, SystolicController_tb);
+
+    clk = 0;
+    rst = 1;
+    start = 0;
+    activation_mode = 2'b00; // RELU
+    base_addr_A = 10;
+    base_addr_B = 30;
+    base_addr_C = 60;
+
+    // Esperar y liberar reset
+    repeat (2) @(posedge clk);
+    rst = 0;
+
+    // Precargar matrices A y B en memoria
+    for (int i = 0; i < N; i++) begin
+      for (int j = 0; j < N; j++) begin
+        memory[base_addr_A + i*N + j] = i + 1;
+        memory[base_addr_B + i*N + j] = j + 1;
+      end
+    end
+
+    // Iniciar ejecución
+    @(posedge clk);
+    start <= 1;
+    @(posedge clk);
+    start <= 0;
+
+    // Esperar a que done se active
+    wait (done);
+
+    $display("Ejecución completada. Resultado en memoria base %0d:", base_addr_C);
+    for (int i = 0; i < N*N; i++) begin
+      $display("mem[%0d] = %0d", base_addr_C + i, memory[base_addr_C + i]);
+    end
+
+    $finish;
+  end
+
+endmodule

@@ -1,2 +1,6 @@
+<<<<<<< Updated upstream
 Info (10281): Verilog HDL Declaration information at sdramTestbench.sv(33): object "READ_VAL1" differs only in case from object "read_val1" in the same scope File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdramTestbench.sv Line: 33
 Info (10281): Verilog HDL Declaration information at sdramTestbench.sv(34): object "READ_VAL2" differs only in case from object "read_val2" in the same scope File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdramTestbench.sv Line: 34
+=======
+Warning (10268): Verilog HDL information at matrix_random_generator.sv(16): always construct contains both blocking and non-blocking assignments File: C:/Users/nicva/ArregloSist-licoNPU/matrix_random_generator.sv Line: 16
+>>>>>>> Stashed changes

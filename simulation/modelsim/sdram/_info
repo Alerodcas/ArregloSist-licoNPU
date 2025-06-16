@@ -1,12 +1,17 @@
 m255
 K4
 z2
+<<<<<<< Updated upstream
+=======
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+>>>>>>> Stashed changes
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
+<<<<<<< Updated upstream
 Z0 dC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/simulation/modelsim
 vsdram_new_sdram_controller_0
 Z1 !s110 1750040679
@@ -29,10 +34,37 @@ Z9 !s90 -reportprogress|300|-vlog01compat|-work|sdram|+incdir+C:/Users/ricar/One
 !i113 1
 Z10 o-vlog01compat -work sdram
 Z11 !s92 -vlog01compat -work sdram +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdram/synthesis/submodules
+=======
+Z0 dC:/Users/nicva/ArregloSist-licoNPU/simulation/modelsim
+vsdram_new_sdram_controller_0
+Z1 !s110 1750051683
+!i10b 1
+!s100 oUFUkFoHTmhnQDI=1mmCm1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IbXXA@2n7`lOZRPS9Z7bT^0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1750004318
+Z5 8C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v
+Z6 FC:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v
+!i122 11
+L0 159 563
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1750051683.000000
+!s107 C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|sdram|+incdir+C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules|C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v|
+!i113 1
+Z10 o-vlog01compat -work sdram
+Z11 !s92 -vlog01compat -work sdram +incdir+C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules
+>>>>>>> Stashed changes
 Z12 tCvgOpt 0
 vsdram_new_sdram_controller_0_input_efifo_module
 R1
 !i10b 1
+<<<<<<< Updated upstream
 !s100 MWlPh9Uom@EFzdfEd=eXM1
 IFNgLa@leO42XKnZS7dE1n3
 R2
@@ -47,6 +79,24 @@ r1
 31
 R7
 R8
+=======
+!s100 Z?lWoz`Um:`lAbLoXLXj;3
+R2
+I^f>De_]>oU=PH8C4DR@b13
+R3
+R0
+R4
+R5
+R6
+!i122 11
+L0 21 128
+R7
+r1
+!s85 0
+31
+R8
+Z13 !s107 C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v|
+>>>>>>> Stashed changes
 R9
 !i113 1
 R10

@@ -1,0 +1,58 @@
+module matrix_random_generator #(
+    parameter int N = 4,              // Tamaño de la matriz NxN
+    parameter int MIN = -5,           // Mínimo valor aleatorio
+    parameter int MAX = 5             // Máximo valor aleatorio
+)(
+    input  logic clk,
+    input  logic rstN,
+    input  logic enable,
+    output logic signed [31:0] matrix [N][N],
+    output logic done
+);
+
+    typedef enum logic [1:0] {
+        IDLE,
+        GENERATE,
+        DONE
+    } state_t;
+
+    state_t state;
+    int i, j;
+
+    always_ff @(posedge clk or negedge rstN) begin
+        if (!rstN) begin
+            state <= IDLE;
+            i <= 0;
+            j <= 0;
+            done <= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (enable) begin
+                        i <= 0;
+                        j <= 0;
+                        done <= 0;
+                        state <= GENERATE;
+                    end
+                end
+                GENERATE: begin
+                    matrix[i][j] <= $urandom_range(MIN, MAX);
+                    if (j == N-1) begin
+                        j <= 0;
+                        if (i == N-1)
+                            state <= DONE;
+                        else
+                            i <= i + 1;
+                    end else begin
+                        j <= j + 1;
+                    end
+                end
+                DONE: begin
+                    done <= 1;
+                    state <= IDLE;
+                end
+            endcase
+        end
+    end
+
+endmodule

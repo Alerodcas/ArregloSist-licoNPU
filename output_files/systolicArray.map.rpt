@@ -1,12 +1,19 @@
+<<<<<<< Updated upstream
 Analysis & Synthesis report for systolicArray
 Sun Jun 15 20:59:32 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+=======
+Analysis & Elaboration report for systolicArray
+Sun Jun 15 23:27:40 2025
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+>>>>>>> Stashed changes
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
+<<<<<<< Updated upstream
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
@@ -42,6 +49,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  34. Post-Synthesis Netlist Statistics for Top Partition
  35. Elapsed Time Per Partition
  36. Analysis & Synthesis Messages
+=======
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |systolicController
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
+>>>>>>> Stashed changes
 
 
 
@@ -64,6 +79,7 @@ refer to the applicable agreement for further details.
 
 
 
+<<<<<<< Updated upstream
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
@@ -85,6 +101,53 @@ refer to the applicable agreement for further details.
 ; Total PLLs                      ; 1                                           ;
 ; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
+=======
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Jun 15 23:27:40 2025          ;
+; Quartus Prime Version         ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                 ; systolicArray                                  ;
+; Top-level Entity Name         ; systolicController                             ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |systolicController ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                            ;
+; ADDR_WIDTH     ; 10    ; Signed Integer                                            ;
+; DATA_WIDTH     ; 16    ; Signed Integer                                            ;
+; LATENCY        ; 3     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+>>>>>>> Stashed changes
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -93,7 +156,11 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+<<<<<<< Updated upstream
 ; Top-level entity name                                                           ; sdramTestbench     ; systolicArray      ;
+=======
+; Top-level entity name                                                           ; systolicController ; systolicArray      ;
+>>>>>>> Stashed changes
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -174,6 +241,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
+<<<<<<< Updated upstream
 +------------------------------------------+
 ; Parallel Compilation                     ;
 +----------------------------+-------------+
@@ -1311,5 +1379,86 @@ Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Processing ended: Sun Jun 15 20:59:32 2025
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:16
+=======
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Sun Jun 15 23:27:34 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off systolicArray -c systolicArray --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/sdram.v
+    Info (12023): Found entity 1: sdram File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/sdram.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/submodules/sdram_sys_sdram_pll_0.v
+    Info (12023): Found entity 1: sdram_sys_sdram_pll_0 File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_sys_sdram_pll_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v
+    Info (12023): Found entity 1: altera_up_avalon_reset_from_locked_signal File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file sdram/synthesis/submodules/sdram_sys_sdram_pll_0_sys_pll.v
+    Info (12023): Found entity 1: sdram_sys_sdram_pll_0_sys_pll File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_sys_sdram_pll_0_sys_pll.v Line: 2
+Info (12021): Found 2 design units, including 2 entities, in source file sdram/synthesis/submodules/sdram_new_sdram_controller_0.v
+    Info (12023): Found entity 1: sdram_new_sdram_controller_0_input_efifo_module File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 21
+    Info (12023): Found entity 2: sdram_new_sdram_controller_0 File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 159
+Info (12021): Found 1 design units, including 1 entities, in source file petestbench.sv
+    Info (12023): Found entity 1: peTestbench File: C:/Users/nicva/ArregloSist-licoNPU/peTestbench.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file systolicarray.sv
+    Info (12023): Found entity 1: systolicArray File: C:/Users/nicva/ArregloSist-licoNPU/systolicArray.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pe.sv
+    Info (12023): Found entity 1: pe File: C:/Users/nicva/ArregloSist-licoNPU/pe.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file systolicarraytestbench.sv
+    Info (12023): Found entity 1: systolicArrayTestbench File: C:/Users/nicva/ArregloSist-licoNPU/systolicArrayTestbench.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sdramtestbench.sv
+    Info (12023): Found entity 1: sdramTestbench File: C:/Users/nicva/ArregloSist-licoNPU/sdramTestbench.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file matrix_random_generator.sv
+    Info (12023): Found entity 1: matrix_random_generator File: C:/Users/nicva/ArregloSist-licoNPU/matrix_random_generator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file matrix_random_generator_tb.sv
+    Info (12023): Found entity 1: matrix_random_generator_tb File: C:/Users/nicva/ArregloSist-licoNPU/matrix_random_generator_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file matrix_defined.sv
+    Info (12023): Found entity 1: matrix_defined File: C:/Users/nicva/ArregloSist-licoNPU/matrix_defined.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file menu.sv
+    Info (12023): Found entity 1: menu File: C:/Users/nicva/ArregloSist-licoNPU/menu.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file menu_tb.sv
+    Info (12023): Found entity 1: menu_tb File: C:/Users/nicva/ArregloSist-licoNPU/menu_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file systoliccontroller.sv
+    Info (12023): Found entity 1: systolicController File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file systoliccontroller_tb.sv
+    Info (12023): Found entity 1: systolicController_tb File: C:/Users/nicva/ArregloSist-licoNPU/systolicController_tb.sv Line: 3
+Warning (10037): Verilog HDL or VHDL warning at sdram_new_sdram_controller_0.v(318): conditional expression evaluates to a constant File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 318
+Warning (10037): Verilog HDL or VHDL warning at sdram_new_sdram_controller_0.v(328): conditional expression evaluates to a constant File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 328
+Warning (10037): Verilog HDL or VHDL warning at sdram_new_sdram_controller_0.v(338): conditional expression evaluates to a constant File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 338
+Warning (10037): Verilog HDL or VHDL warning at sdram_new_sdram_controller_0.v(682): conditional expression evaluates to a constant File: C:/Users/nicva/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 682
+Info (12127): Elaborating entity "systolicController" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(60): truncated value with size 32 to match size of target (3) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(62): truncated value with size 32 to match size of target (3) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(65): truncated value with size 32 to match size of target (6) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 65
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(69): truncated value with size 32 to match size of target (3) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 69
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(71): truncated value with size 32 to match size of target (3) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 71
+Info (10264): Verilog HDL Case Statement information at systolicController.sv(56): all case item expressions in this case statement are onehot File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(101): truncated value with size 32 to match size of target (10) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 101
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(110): truncated value with size 32 to match size of target (10) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 110
+Warning (10230): Verilog HDL assignment warning at systolicController.sv(134): truncated value with size 32 to match size of target (10) File: C:/Users/nicva/ArregloSist-licoNPU/systolicController.sv Line: 134
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sdram" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "sdram_new_sdram_controller_0" -- entity does not exist in design
+Warning (20013): Ignored 317 assignments for entity "sdram_sys_sdram_pll_0_sys_pll" -- entity does not exist in design
+Info (144001): Generated suppressed messages file C:/Users/nicva/ArregloSist-licoNPU/output_files/systolicArray.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Sun Jun 15 23:27:40 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/nicva/ArregloSist-licoNPU/output_files/systolicArray.map.smsg.
+>>>>>>> Stashed changes
 
 
