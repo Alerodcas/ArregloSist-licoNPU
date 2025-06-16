@@ -62,7 +62,7 @@ module sdramTestbench (
     localparam logic [15:0] TEST_DATA = 16'h0042;       // Dato de prueba (solo 8 bits significativos)
     
     // Instanciación del controlador SDRAM
-    sdram sdram_controller (
+    sdram sdram (
         .clk_clk(clk_clk),
         .reset_reset_n(reset_reset_n),
         .sdram_address(sdram_address),
@@ -86,7 +86,7 @@ module sdramTestbench (
     );
     
     // Instanciación de la interfaz simplificada
-    sdram_interface sdram_if (
+    sdramController sdramIf (
         .clk(clk_clk),
         .reset_n(reset_reset_n),
         .start_write(start_write),

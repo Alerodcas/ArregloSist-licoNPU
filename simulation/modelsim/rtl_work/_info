@@ -1,7 +1,6 @@
 m255
 K4
 z2
-!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -10,82 +9,79 @@ z2
 cModel Technology
 Z0 dC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/simulation/modelsim
 vpe
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1750004343
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1750040679
 !i10b 1
-!s100 k>0]>O@Q^7aTfk<1aZF?73
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IXbO5if`Z_HZVY`8KGQ1`12
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 ZMh>H<dDad:zIlWkm1XOK0
+I@A<Z9aHO[;GLY[eBC9[?`0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 pe_sv_unit
 S1
 R0
 w1750002522
 8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv
 FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv
-!i122 1
-L0 1 52
-Z5 OV;L;2020.1;71
+L0 1
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1750004343.000000
+Z5 !s108 1750040679.000000
 !s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv|
 !i113 1
-Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU
-Z9 tCvgOpt 0
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU
+Z8 tCvgOpt 0
 vsystolicArray
 R1
 R2
 !i10b 1
-!s100 o6c]k7]lh4gLgQRY>k=Wf1
+!s100 99`A;PWMmG[?fA01gEPa41
+I8S3SNFX0`J@d_ODbBm9LR2
 R3
-ILNQZXUV667OMJdS@QhJe22
-R4
+!s105 systolicArray_sv_unit
 S1
 R0
 w1750002487
 8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv
 FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv
-!i122 0
-L0 1 55
-R5
+L0 1
+R4
 r1
 !s85 0
 31
-!s108 1750004342.000000
+R5
 !s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv|
 !i113 1
+R6
 R7
 R8
-R9
 nsystolic@array
 vsystolicArrayTestbench
 R1
 R2
 !i10b 1
-!s100 mHk_7SE0gnPE_24?gioiB0
+!s100 gf6_>R@ogRK1F:bjL]cK71
+IG2z=PGH44ddR9>?_WK`bF0
 R3
-IgPZGdeG68EIKI^_[M?ihO2
-R4
+!s105 systolicArrayTestbench_sv_unit
 S1
 R0
 w1750004096
 8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv
 FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv
-!i122 2
-L0 1 92
-R5
+L0 1
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv|
 !i113 1
+R6
 R7
 R8
-R9
 nsystolic@array@testbench
