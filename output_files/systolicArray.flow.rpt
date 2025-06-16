@@ -1,5 +1,5 @@
 Flow report for systolicArray
-Mon Jun 16 14:32:26 2025
+Mon Jun 16 14:52:34 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Mon Jun 16 14:32:26 2025      ;
+; Flow Status                 ; Flow Failed - Mon Jun 16 14:52:34 2025      ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; systolicArray                               ;
 ; Top-level Entity Name       ; topModule                                   ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/16/2025 14:32:18 ;
+; Start date & time ; 06/16/2025 14:52:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; systolicArray       ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+-----------------------------------------------------------+---------------+-------------+------------------------+
 ; Assignment Name                      ; Value                                                     ; Default Value ; Entity Name ; Section Id             ;
 +--------------------------------------+-----------------------------------------------------------+---------------+-------------+------------------------+
-; COMPILER_SIGNATURE_ID                ; 187549579636331.175010593807504                           ; --            ; --          ; --                     ;
+; COMPILER_SIGNATURE_ID                ; 187549579636331.175010714513976                           ; --            ; --          ; --                     ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; systolicArrayTestbench ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; peTestbench            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; sdramTestbench         ;
@@ -120,8 +120,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4788 MB             ; 00:00:18                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4789 MB             ; 00:00:18                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

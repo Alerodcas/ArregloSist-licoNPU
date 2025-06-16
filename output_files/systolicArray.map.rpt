@@ -1,5 +1,5 @@
 Analysis & Synthesis report for systolicArray
-Mon Jun 16 14:32:26 2025
+Mon Jun 16 14:52:34 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Jun 16 14:32:26 2025           ;
+; Analysis & Synthesis Status ; Failed - Mon Jun 16 14:52:34 2025           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; systolicArray                               ;
 ; Top-level Entity Name       ; topModule                                   ;
@@ -173,7 +173,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jun 16 14:32:18 2025
+    Info: Processing started: Mon Jun 16 14:52:25 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off systolicArray -c systolicArray
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -198,14 +198,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file sdram/s
 Info (12021): Found 2 design units, including 2 entities, in source file sdram/synthesis/submodules/sdram_new_sdram_controller_0.v
     Info (12023): Found entity 1: sdram_new_sdram_controller_0_input_efifo_module File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 21
     Info (12023): Found entity 2: sdram_new_sdram_controller_0 File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v Line: 159
-Info (12021): Found 1 design units, including 1 entities, in source file systolicarraytestbench.sv
-    Info (12023): Found entity 1: systolicArrayTestbench File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv Line: 1
+Warning (12019): Can't analyze file -- file systolicArrayTestbench.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file systolicarray.sv
     Info (12023): Found entity 1: systolicArray File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file sdramtestbench.sv
-    Info (12023): Found entity 1: sdramTestbench File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdramTestbench.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file petestbench.sv
-    Info (12023): Found entity 1: peTestbench File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/peTestbench.sv Line: 3
+Warning (12019): Can't analyze file -- file sdramTestbench.sv is missing
+Warning (12019): Can't analyze file -- file peTestbench.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file pe.sv
     Info (12023): Found entity 1: pe File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file topmodule.sv
@@ -321,10 +318,10 @@ Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "sdra
 Info (12128): Elaborating entity "hexDisplayController" for hierarchy "hexDisplayController:displayCtrl" File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/topModule.sv Line: 162
 Info (12128): Elaborating entity "vjtag_interface" for hierarchy "vjtag_interface:u_vjtag_interface" File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/topModule.sv Line: 233
 Error (12006): Node instance "u_vjtag" instantiates undefined entity "vjtag". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/topModule.sv Line: 218
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 20 warnings
-    Error: Peak virtual memory: 4788 megabytes
-    Error: Processing ended: Mon Jun 16 14:32:26 2025
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:18
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 23 warnings
+    Error: Peak virtual memory: 4789 megabytes
+    Error: Processing ended: Mon Jun 16 14:52:34 2025
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:19
 
 
