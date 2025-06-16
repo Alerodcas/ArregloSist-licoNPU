@@ -1,0 +1,21 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlib sdram
+vmap sdram sdram
+vlog -vlog01compat -work sdram +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdram/synthesis/submodules {C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/sdram/synthesis/submodules/sdram_new_sdram_controller_0.v}
+vlog -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU {C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv}
+vlog -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU {C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv}
+
+vlog -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU {C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -L sdram -voptargs="+acc"  systolicArrayTestbench
+
+add wave *
+view structure
+view signals
+run -all

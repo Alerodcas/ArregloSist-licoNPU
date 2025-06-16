@@ -1,0 +1,87 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/simulation/modelsim
+vpe
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1750050438
+!i10b 1
+!s100 ZMh>H<dDad:zIlWkm1XOK0
+I@A<Z9aHO[;GLY[eBC9[?`0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 pe_sv_unit
+S1
+R0
+Z4 w1750050005
+8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv
+FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1750050438.000000
+!s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/pe.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU
+Z9 tCvgOpt 0
+vsystolicArray
+R1
+R2
+!i10b 1
+!s100 99`A;PWMmG[?fA01gEPa41
+I8S3SNFX0`J@d_ODbBm9LR2
+R3
+!s105 systolicArray_sv_unit
+S1
+R0
+R4
+8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv
+FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArray.sv|
+!i113 1
+R7
+R8
+R9
+nsystolic@array
+vsystolicArrayTestbench
+R1
+R2
+!i10b 1
+!s100 gf6_>R@ogRK1F:bjL]cK71
+IG2z=PGH44ddR9>?_WK`bF0
+R3
+!s105 systolicArrayTestbench_sv_unit
+S1
+R0
+R4
+8C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv
+FC:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU|C:/Users/ricar/OneDrive/Escritorio/ArregloSist-licoNPU/systolicArrayTestbench.sv|
+!i113 1
+R7
+R8
+R9
+nsystolic@array@testbench

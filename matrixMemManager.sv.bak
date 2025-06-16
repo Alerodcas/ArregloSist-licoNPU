@@ -1,0 +1,152 @@
+module matrixMemManager (
+	input	logic			clk,
+	input	logic			resetN,
+
+	// External matrix input (4x4 values)
+	input	logic [15:0]	inputMatrix [0:15],
+
+	// Output matrix (read from SDRAM)
+	output	logic [15:0]	outputMatrix [0:15],
+
+	// Simplified SDRAM interface
+	output	logic			startWrite,
+	output	logic			startRead,
+	output	logic [24:0]	address,
+	output	logic [15:0]	writeData,
+	input	logic [15:0]	readData,
+	input	logic			operationDone,
+	input	logic			busy
+);
+
+	// Internal FSM state
+	typedef enum logic [2:0] {
+		IDLE,
+		WRITE_MAT1,
+		WRITE_MAT2,
+		WRITE_INPUT,
+		WAIT_WR,
+		READ_INPUT,
+		WAIT_RD
+	} state_t;
+
+	state_t currentState, nextState;
+
+	logic [4:0] index;
+	logic [15:0] mat1 [0:15];
+	logic [15:0] mat2 [0:15];
+
+	// Init fixed matrices
+	initial begin
+		// First matrix: identity
+		mat1 = '{16'h0001, 16'h0000, 16'h0000, 16'h0000,
+		         16'h0000, 16'h0001, 16'h0000, 16'h0000,
+		         16'h0000, 16'h0000, 16'h0001, 16'h0000,
+		         16'h0000, 16'h0000, 16'h0000, 16'h0001};
+
+		// Second matrix: incremental
+		mat2 = '{16'h0001, 16'h0002, 16'h0003, 16'h0004,
+		         16'h0005, 16'h0006, 16'h0007, 16'h0008,
+		         16'h0009, 16'h000A, 16'h000B, 16'h000C,
+		         16'h000D, 16'h000E, 16'h000F, 16'h0010};
+	end
+
+	// FSM state register
+	always_ff @(posedge clk or negedge resetN) begin
+		if (!resetN) begin
+			currentState <= IDLE;
+			index <= 0;
+		end else begin
+			currentState <= nextState;
+
+			if ((currentState == WRITE_MAT1 || currentState == WRITE_MAT2 || currentState == WRITE_INPUT) && operationDone)
+				index <= index + 1;
+
+			if (currentState == READ_INPUT && operationDone)
+				index <= index + 1;
+
+			if (currentState == IDLE)
+				index <= 0;
+		end
+	end
+
+	// FSM next state logic
+	always_comb begin
+		startWrite = 0;
+		startRead = 0;
+		address = 0;
+		writeData = 0;
+
+		nextState = currentState;
+
+		case (currentState)
+			IDLE: begin
+				nextState = WRITE_MAT1;
+			end
+
+			WRITE_MAT1: begin
+				if (!busy) begin
+					startWrite = 1;
+					address = index;
+					writeData = mat1[index];
+					nextState = WAIT_WR;
+				end
+			end
+
+			WRITE_MAT2: begin
+				if (!busy) begin
+					startWrite = 1;
+					address = 16 + index;
+					writeData = mat2[index];
+					nextState = WAIT_WR;
+				end
+			end
+
+			WRITE_INPUT: begin
+				if (!busy) begin
+					startWrite = 1;
+					address = 32 + index;
+					writeData = inputMatrix[index];
+					nextState = WAIT_WR;
+				end
+			end
+
+			WAIT_WR: begin
+				if (operationDone) begin
+					if (index == 15) begin
+						case (currentState)
+							WRITE_MAT1:	nextState = WRITE_MAT2;
+							WRITE_MAT2:	nextState = WRITE_INPUT;
+							WRITE_INPUT:nextState = READ_INPUT;
+							default:	nextState = IDLE;
+						endcase
+					end else begin
+						nextState = currentState;
+					end
+				end
+			end
+
+			READ_INPUT: begin
+				if (!busy) begin
+					startRead = 1;
+					address = 32 + index;
+					nextState = WAIT_RD;
+				end
+			end
+
+			WAIT_RD: begin
+				if (operationDone) begin
+					nextState = (index == 15) ? READ_INPUT : READ_INPUT;
+				end
+			end
+
+			default: nextState = IDLE;
+		endcase
+	end
+
+	// Update output matrix
+	always_ff @(posedge clk) begin
+		if (currentState == WAIT_RD && operationDone)
+			outputMatrix[index] <= readData;
+	end
+
+endmodule

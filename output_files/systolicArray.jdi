@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="5919d564b4b51fd57e5c"/>
+  </project>
+  <file_info>
+    <file device="5CSEMA5F31C6" path="systolicArray.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="sdram:sdramCore" name="sdramCore">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME sdram HAS_SOPCINFO 1 GENERATION_ID 1750042511"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
