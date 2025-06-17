@@ -4,143 +4,267 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "wire_addr[0]",
+					"name" : "wireAddress[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[1]",
+					"name" : "wireAddress[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[2]",
+					"name" : "wireAddress[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[3]",
+					"name" : "wireAddress[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[4]",
+					"name" : "wireAddress[4]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[5]",
+					"name" : "wireAddress[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[6]",
+					"name" : "wireAddress[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[7]",
+					"name" : "wireAddress[7]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[8]",
+					"name" : "wireAddress[8]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[9]",
+					"name" : "wireAddress[9]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[10]",
+					"name" : "wireAddress[10]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[11]",
+					"name" : "wireAddress[11]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_addr[12]",
+					"name" : "wireAddress[12]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_cas_n",
+					"name" : "wireCasN",
 					"strict" : false
 				},
 				{
-					"name" : "wire_cs_n",
+					"name" : "wireCsN",
 					"strict" : false
 				},
 				{
-					"name" : "wire_ras_n",
+					"name" : "wireRasN",
 					"strict" : false
 				},
 				{
-					"name" : "wire_we_n",
+					"name" : "wireWeN",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[0]",
+					"name" : "hex0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[1]",
+					"name" : "hex0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[2]",
+					"name" : "hex0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[3]",
+					"name" : "hex0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[4]",
+					"name" : "hex0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[5]",
+					"name" : "hex0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[6]",
+					"name" : "hex0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[7]",
+					"name" : "hex1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[8]",
+					"name" : "hex1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[9]",
+					"name" : "hex1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[10]",
+					"name" : "hex1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[11]",
+					"name" : "hex1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[12]",
+					"name" : "hex1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[13]",
+					"name" : "hex1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[14]",
+					"name" : "hex2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wire_dq[15]",
+					"name" : "hex2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "hex2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "wireDq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
 					"strict" : false
 				},
 				{
 					"name" : "resetN",
+					"strict" : false
+				},
+				{
+					"name" : "nextButton",
+					"strict" : false
+				},
+				{
+					"name" : "stepEnableSwitch",
+					"strict" : false
+				},
+				{
+					"name" : "stepButton",
 					"strict" : false
 				}
 			]

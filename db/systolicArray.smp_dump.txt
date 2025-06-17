@@ -1,4 +1,35 @@
 
+State Machine - |topModule|currentMainState
+Name currentMainState.displayResults currentMainState.storeResults currentMainState.systolicCompute currentMainState.loadMatrixB currentMainState.loadMatrixA currentMainState.idle 
+currentMainState.idle 0 0 0 0 0 0 
+currentMainState.loadMatrixA 0 0 0 0 1 1 
+currentMainState.loadMatrixB 0 0 0 1 0 1 
+currentMainState.systolicCompute 0 0 1 0 0 1 
+currentMainState.storeResults 0 1 0 0 0 1 
+currentMainState.displayResults 1 0 0 0 0 1 
+
+State Machine - |topModule|displayMode
+Name displayMode.0001 
+displayMode.0000 0 
+displayMode.0001 1 
+
+State Machine - |topModule|systolicController:systolicController|systolicInterface:systolicInterface|state
+Name state.WAIT state.INJECT state.LOAD_MATRICES state.IDLE state.DONE 
+state.IDLE 0 0 0 0 0 
+state.LOAD_MATRICES 0 0 1 1 0 
+state.INJECT 0 1 0 1 0 
+state.WAIT 1 0 0 1 0 
+state.DONE 0 0 0 1 1 
+
+State Machine - |topModule|sdramController:sdramInt|current_state
+Name current_state.DONE current_state.READ_WAIT current_state.READ_START current_state.WRITE_WAIT current_state.WRITE_START current_state.IDLE 
+current_state.IDLE 0 0 0 0 0 0 
+current_state.WRITE_START 0 0 0 0 1 1 
+current_state.WRITE_WAIT 0 0 0 1 0 1 
+current_state.READ_START 0 0 1 0 0 1 
+current_state.READ_WAIT 0 1 0 0 0 1 
+current_state.DONE 1 0 0 0 0 1 
+
 State Machine - |topModule|sdram:sdramCore|sdram_new_sdram_controller_0:new_sdram_controller_0|m_next
 Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
 m_next.000000001 0 0 0 0 
@@ -33,22 +64,3 @@ i_state.010 0 0 0 1 0 1
 i_state.011 0 0 1 0 0 1 
 i_state.101 0 1 0 0 0 1 
 i_state.111 1 0 0 0 0 1 
-
-State Machine - |topModule|sdramController:sdramInt|current_state
-Name current_state.DONE current_state.READ_WAIT current_state.READ_START current_state.WRITE_WAIT current_state.WRITE_START current_state.IDLE 
-current_state.IDLE 0 0 0 0 0 0 
-current_state.WRITE_START 0 0 0 0 1 1 
-current_state.WRITE_WAIT 0 0 0 1 0 1 
-current_state.READ_START 0 0 1 0 0 1 
-current_state.READ_WAIT 0 1 0 0 0 1 
-current_state.DONE 1 0 0 0 0 1 
-
-State Machine - |topModule|matrixMemManager:memManager|currentState
-Name currentState.WAIT_RD currentState.READ_ALL currentState.WAIT_WR currentState.WRITE_INPUT currentState.WRITE_MAT2 currentState.WRITE_MAT1 currentState.IDLE 
-currentState.IDLE 0 0 0 0 0 0 0 
-currentState.WRITE_MAT1 0 0 0 0 0 1 1 
-currentState.WRITE_MAT2 0 0 0 0 1 0 1 
-currentState.WRITE_INPUT 0 0 0 1 0 0 1 
-currentState.WAIT_WR 0 0 1 0 0 0 1 
-currentState.READ_ALL 0 1 0 0 0 0 1 
-currentState.WAIT_RD 1 0 0 0 0 0 1 
