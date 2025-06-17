@@ -8,6 +8,6 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Basic Functions/Bridges and Adaptors,Library,Library/Basic Functions/Simulation; Debug and Verification,Project,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Interface Protocols/Serial,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library/Basic Functions,Library/Interface Protocols" />
+   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification,Library,Library/Interface Protocols/Serial,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library/Interface Protocols,Project,Library/Basic Functions/Bridges and Adaptors" />
  <window width="1920" height="1032" x="0" y="0" />
 </preferences>

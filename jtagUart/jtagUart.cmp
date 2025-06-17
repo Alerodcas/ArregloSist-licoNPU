@@ -1,0 +1,14 @@
+	component jtagUart is
+		port (
+			clk_clk               : in  std_logic                     := 'X';             -- clk
+			jtagslave_chipselect  : in  std_logic                     := 'X';             -- chipselect
+			jtagslave_address     : in  std_logic                     := 'X';             -- address
+			jtagslave_read_n      : in  std_logic                     := 'X';             -- read_n
+			jtagslave_readdata    : out std_logic_vector(31 downto 0);                    -- readdata
+			jtagslave_write_n     : in  std_logic                     := 'X';             -- write_n
+			jtagslave_writedata   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			jtagslave_waitrequest : out std_logic;                                        -- waitrequest
+			reset_reset_n         : in  std_logic                     := 'X'              -- reset_n
+		);
+	end component jtagUart;
+

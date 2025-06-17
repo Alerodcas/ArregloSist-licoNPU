@@ -1,8 +1,18 @@
 <sld_project_info>
   <sld_infos>
+    <sld_info hpath="jtagComunication:jtagComunication|jtagUart:jtaguart" name="jtaguart">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME jtagUart HAS_SOPCINFO 1 GENERATION_ID 1750182710"/>
+      </assignment_values>
+    </sld_info>
     <sld_info hpath="sdram:sdramCore" name="sdramCore">
       <assignment_values>
         <assignment_value text="QSYS_NAME sdram HAS_SOPCINFO 1 GENERATION_ID 1750042511"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_sld_fab HAS_SOPCINFO 1"/>
       </assignment_values>
     </sld_info>
   </sld_infos>

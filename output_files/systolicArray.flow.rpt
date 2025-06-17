@@ -1,5 +1,5 @@
 Flow report for systolicArray
-Mon Jun 16 23:34:22 2025
+Tue Jun 17 12:12:21 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Jun 16 23:34:22 2025       ;
+; Flow Status                     ; Successful - Tue Jun 17 12:12:21 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; systolicArray                               ;
 ; Top-level Entity Name           ; topModule                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,070 / 32,070 ( 3 % )                      ;
-; Total registers                 ; 835                                         ;
+; Logic utilization (in ALMs)     ; 1,186 / 32,070 ( 4 % )                      ;
+; Total registers                 ; 965                                         ;
 ; Total pins                      ; 71 / 457 ( 16 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
+; Total block memory bits         ; 512 / 4,065,280 ( < 1 % )                   ;
 ; Total DSP Blocks                ; 16 / 87 ( 18 % )                            ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,57 +67,58 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/16/2025 23:32:25 ;
+; Start date & time ; 06/17/2025 12:10:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; systolicArray       ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                        ;
-+--------------------------------------+-----------------------------------------------------------+---------------+-------------+------------------------+
-; Assignment Name                      ; Value                                                     ; Default Value ; Entity Name ; Section Id             ;
-+--------------------------------------+-----------------------------------------------------------+---------------+-------------+------------------------+
-; COMPILER_SIGNATURE_ID                ; 187549579636331.175013834412524                           ; --            ; --          ; --                     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; systolicArrayTestbench ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; peTestbench            ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                                        ; --            ; --          ; sdramTestbench         ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; systolicArrayTestbench                                    ; --            ; --          ; eda_simulation         ;
-; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                         ; --            ; --          ; eda_simulation         ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)                           ; <None>        ; --          ; --                     ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                           ; --            ; --          ; eda_simulation         ;
-; EDA_TEST_BENCH_FILE                  ; systolicArrayTestbench.sv                                 ; --            ; --          ; systolicArrayTestbench ;
-; EDA_TEST_BENCH_FILE                  ; peTestbench.sv                                            ; --            ; --          ; peTestbench            ;
-; EDA_TEST_BENCH_FILE                  ; sdramTestbench.sv                                         ; --            ; --          ; sdramTestbench         ;
-; EDA_TEST_BENCH_MODULE_NAME           ; systolicArrayTestbench                                    ; --            ; --          ; systolicArrayTestbench ;
-; EDA_TEST_BENCH_MODULE_NAME           ; peTestbench                                               ; --            ; --          ; peTestbench            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; sdramTestbench                                            ; --            ; --          ; sdramTestbench         ;
-; EDA_TEST_BENCH_NAME                  ; peTestbench                                               ; --            ; --          ; eda_simulation         ;
-; EDA_TEST_BENCH_NAME                  ; systolicArrayTestbench                                    ; --            ; --          ; eda_simulation         ;
-; EDA_TEST_BENCH_NAME                  ; sdramTestbench                                            ; --            ; --          ; eda_simulation         ;
-; EDA_TIME_SCALE                       ; 1 ps                                                      ; --            ; --          ; eda_simulation         ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                                        ; --            ; --          ; --                     ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                                         ; --            ; --          ; --                     ;
-; MISC_FILE                            ; u_vjtag/synthesis/../u_vjtag.cmp                          ; --            ; --          ; --                     ;
-; MISC_FILE                            ; u_vjtag/synthesis/../../u_vjtag.qsys                      ; --            ; --          ; --                     ;
-; MISC_FILE                            ; sdram/synthesis/../sdram.cmp                              ; --            ; --          ; --                     ;
-; MISC_FILE                            ; sdram/synthesis/../../sdram.qsys                          ; --            ; --          ; --                     ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)                    ; --            ; topModule   ; Top                    ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                    ; --            ; topModule   ; Top                    ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                    ; --            ; topModule   ; Top                    ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                       ; --            ; --          ; --                     ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                     ; --            ; --          ; --                     ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                                              ; --            ; --          ; --                     ;
-; SLD_FILE                             ; u_vjtag/synthesis/u_vjtag.debuginfo                       ; --            ; --          ; --                     ;
-; SLD_FILE                             ; sdram/synthesis/sdram.debuginfo                           ; --            ; --          ; --                     ;
-; SLD_INFO                             ; QSYS_NAME sdram HAS_SOPCINFO 1 GENERATION_ID 1750042511   ; --            ; sdram       ; --                     ;
-; SLD_INFO                             ; QSYS_NAME u_vjtag HAS_SOPCINFO 1 GENERATION_ID 1750103836 ; --            ; u_vjtag     ; --                     ;
-; SOPCINFO_FILE                        ; u_vjtag/synthesis/../../u_vjtag.sopcinfo                  ; --            ; --          ; --                     ;
-; SOPCINFO_FILE                        ; sdram/synthesis/../../sdram.sopcinfo                      ; --            ; --          ; --                     ;
-; SYNTHESIS_ONLY_QIP                   ; On                                                        ; --            ; --          ; --                     ;
-; SYNTHESIS_ONLY_QIP                   ; On                                                        ; --            ; --          ; --                     ;
-; TOP_LEVEL_ENTITY                     ; topModule                                                 ; systolicArray ; --          ; --                     ;
-+--------------------------------------+-----------------------------------------------------------+---------------+-------------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                         ;
++--------------------------------------+------------------------------------------------------------+---------------+-------------+------------------------+
+; Assignment Name                      ; Value                                                      ; Default Value ; Entity Name ; Section Id             ;
++--------------------------------------+------------------------------------------------------------+---------------+-------------+------------------------+
+; COMPILER_SIGNATURE_ID                ; 187549579636331.175018384418692                            ; --            ; --          ; --                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                         ; --            ; --          ; systolicArrayTestbench ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                         ; --            ; --          ; peTestbench            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                                         ; --            ; --          ; sdramTestbench         ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; systolicArrayTestbench                                     ; --            ; --          ; eda_simulation         ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                                          ; --            ; --          ; eda_simulation         ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)                            ; <None>        ; --          ; --                     ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                            ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_FILE                  ; systolicArrayTestbench.sv                                  ; --            ; --          ; systolicArrayTestbench ;
+; EDA_TEST_BENCH_FILE                  ; peTestbench.sv                                             ; --            ; --          ; peTestbench            ;
+; EDA_TEST_BENCH_FILE                  ; sdramTestbench.sv                                          ; --            ; --          ; sdramTestbench         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; systolicArrayTestbench                                     ; --            ; --          ; systolicArrayTestbench ;
+; EDA_TEST_BENCH_MODULE_NAME           ; peTestbench                                                ; --            ; --          ; peTestbench            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; sdramTestbench                                             ; --            ; --          ; sdramTestbench         ;
+; EDA_TEST_BENCH_NAME                  ; peTestbench                                                ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; systolicArrayTestbench                                     ; --            ; --          ; eda_simulation         ;
+; EDA_TEST_BENCH_NAME                  ; sdramTestbench                                             ; --            ; --          ; eda_simulation         ;
+; EDA_TIME_SCALE                       ; 1 ps                                                       ; --            ; --          ; eda_simulation         ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                         ; --            ; --          ; --                     ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                          ; --            ; --          ; --                     ;
+; MISC_FILE                            ; jtagUart/synthesis/../jtagUart.cmp                         ; --            ; --          ; --                     ;
+; MISC_FILE                            ; jtagUart/synthesis/../../jtagUart.qsys                     ; --            ; --          ; --                     ;
+; MISC_FILE                            ; sdram/synthesis/../sdram.cmp                               ; --            ; --          ; --                     ;
+; MISC_FILE                            ; sdram/synthesis/../../sdram.qsys                           ; --            ; --          ; --                     ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                     ; --            ; topModule   ; Top                    ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                     ; --            ; topModule   ; Top                    ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                     ; --            ; topModule   ; Top                    ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                        ; --            ; --          ; --                     ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                      ; --            ; --          ; --                     ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                               ; --            ; --          ; --                     ;
+; SLD_FILE                             ; jtagUart/synthesis/jtagUart.regmap                         ; --            ; --          ; --                     ;
+; SLD_FILE                             ; jtagUart/synthesis/jtagUart.debuginfo                      ; --            ; --          ; --                     ;
+; SLD_FILE                             ; sdram/synthesis/sdram.debuginfo                            ; --            ; --          ; --                     ;
+; SLD_INFO                             ; QSYS_NAME jtagUart HAS_SOPCINFO 1 GENERATION_ID 1750182710 ; --            ; jtagUart    ; --                     ;
+; SLD_INFO                             ; QSYS_NAME sdram HAS_SOPCINFO 1 GENERATION_ID 1750042511    ; --            ; sdram       ; --                     ;
+; SOPCINFO_FILE                        ; jtagUart/synthesis/../../jtagUart.sopcinfo                 ; --            ; --          ; --                     ;
+; SOPCINFO_FILE                        ; sdram/synthesis/../../sdram.sopcinfo                       ; --            ; --          ; --                     ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                         ; --            ; --          ; --                     ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                         ; --            ; --          ; --                     ;
+; TOP_LEVEL_ENTITY                     ; topModule                                                  ; systolicArray ; --          ; --                     ;
++--------------------------------------+------------------------------------------------------------+---------------+-------------+------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -125,12 +126,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4870 MB             ; 00:00:22                           ;
-; Fitter               ; 00:01:15     ; 1.1                     ; 6973 MB             ; 00:02:21                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4857 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:11     ; 1.7                     ; 5317 MB             ; 00:00:17                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4890 MB             ; 00:00:02                           ;
-; Total                ; 00:01:50     ; --                      ; --                  ; 00:03:09                           ;
+; Analysis & Synthesis ; 00:00:27     ; 1.0                     ; 4940 MB             ; 00:00:43                           ;
+; Fitter               ; 00:00:46     ; 1.1                     ; 7023 MB             ; 00:01:35                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4862 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.6                     ; 5351 MB             ; 00:00:14                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4895 MB             ; 00:00:03                           ;
+; Total                ; 00:01:31     ; --                      ; --                  ; 00:02:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

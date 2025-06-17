@@ -15,9 +15,9 @@ module displayController(
     logic [63:0] cycleCounter;
     logic [31:0] memOpsCounter;
     logic [31:0] flopCounter;
+	 
     logic [31:0] arithmeticIntensity;
 
-    // Performance counters (simplified)
     always_ff @(posedge clock or negedge resetN) begin
         if (!resetN) begin
             cycleCounter <= 64'b0;
@@ -33,7 +33,6 @@ module displayController(
         end
     end
 
-    // Arithmetic intensity calculation
     always_comb begin
         if (memOpsCounter > 0) begin
             arithmeticIntensity = 32'd128 / (memOpsCounter * 2);

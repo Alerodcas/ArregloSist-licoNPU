@@ -26,7 +26,7 @@ module topModule(
     parameter [24:0] MATRIX_B_BASE = 25'h000040;
     parameter [24:0] MATRIX_C_BASE = 25'h000080;
 
-    // Internal signals
+    // SDRAM Signals
     logic [24:0] sdramAddress;
     logic [1:0]  sdramByteEnableN;
     logic        sdramChipSelect;
@@ -36,23 +36,34 @@ module topModule(
     logic        sdramReadDataValid;
     logic        sdramWaitRequest;
 
+	 // SDRAM Controllers
     logic        startWrite, startRead;
     logic [24:0] currentAddress;
     logic [15:0] currentWriteData;
     logic [15:0] currentReadData;
     logic        operationDone;
     logic        busy;
-
+	 
+	 // Systilic Array Parameters
     logic signed [15:0] injectA [0:3][0:3];
     logic signed [15:0] injectB [0:3][0:3];
     logic signed [15:0] resultMatrix [0:3][0:3];
     logic               systolicStart;
     logic               systolicBusy;
     logic               systolicDone;
-
+	
+	 // Stepping
     logic [31:0] displayValue;
     logic        stepButtonEdge;
     logic        allowProgression;
+	 
+	 // Registers
+	 logic [15:0] debugOutput;
+	 
+	 // Arithmetic Intensity
+	 logic [31:0] numOperations;         // Total number of floating point or integer operations
+	 logic [31:0] numBytes;              // Total bytes processed (e.g., reads/writes)
+	 logic [31:0] arithmeticIntensity;   // Result in Q8.8 fixed-point format
 
     // Main state machine signals
     typedef enum logic [3:0] {
@@ -155,6 +166,21 @@ module topModule(
         .matrixIndex(matrixIndex),
         .resultIndex(resultIndex)
     );
+	 
+	 arithmeticIntensityCalculator intensityCalc (
+		.numOperations(numOperations),
+		.numBytes(numBytes),
+		.arithmeticIntensity(arithmeticIntensity)
+	 );
+	 
+	 	// Control Registers Module
+	controlRegisters #(
+			.MATRIX_DEBUG_BASE(25'h0000C0)
+	) controlRegs (
+			.clk(clock),
+			.resetN(resetN),
+			.debugOutput(debugOutput)
+	);
 
     // Memory Operations Controller
     memoryController memCtrl (
@@ -173,6 +199,8 @@ module topModule(
         .currentAddress(currentAddress),
         .currentWriteData(currentWriteData)
     );
+	 
+	 
 
     // Systolic Control Module
     systolicControl systCtrl (
@@ -196,5 +224,11 @@ module topModule(
         .hex2(hex2),
         .hex3(hex3)
     );
+	 
+	 // Jtag Module
+	 jtagComunication jtagComunication (
+			.CLOCK_50(clock),
+			.RESET_N(resetN)
+	 );
 
 endmodule

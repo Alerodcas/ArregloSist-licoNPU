@@ -1,16 +1,16 @@
-Fitter Status : Successful - Mon Jun 16 23:33:54 2025
+Fitter Status : Successful - Tue Jun 17 12:11:59 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : systolicArray
 Top-level Entity Name : topModule
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1,070 / 32,070 ( 3 % )
-Total registers : 835
+Logic utilization (in ALMs) : 1,186 / 32,070 ( 4 % )
+Total registers : 965
 Total pins : 71 / 457 ( 16 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 4,065,280 ( 0 % )
-Total RAM Blocks : 0 / 397 ( 0 % )
+Total block memory bits : 512 / 4,065,280 ( < 1 % )
+Total RAM Blocks : 1 / 397 ( < 1 % )
 Total DSP Blocks : 16 / 87 ( 18 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

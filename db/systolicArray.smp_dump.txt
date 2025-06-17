@@ -1,4 +1,10 @@
 
+State Machine - |topModule|jtagComunication:jtagComunication|uartControl:uartControl|state
+Name state.IDLE state.WAIT_DONE state.SEND 
+state.IDLE 0 0 0 
+state.SEND 1 0 1 
+state.WAIT_DONE 1 1 0 
+
 State Machine - |topModule|displayController:dispCtrl|displayMode
 Name displayMode.0001 
 displayMode.0000 0 
