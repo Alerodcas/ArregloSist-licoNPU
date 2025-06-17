@@ -1,0 +1,34 @@
+// Systolic Array Control Module
+module systolicControl(
+    input  logic clock,
+    input  logic resetN,
+    input  logic [3:0] currentMainState,
+    input  logic systolicBusy,
+    input  logic systolicDone,
+    output logic systolicStart
+);
+
+    // Systolic control logic
+    always_ff @(posedge clock or negedge resetN) begin
+        if (!resetN) begin
+            systolicStart <= 1'b0;
+        end else begin
+            case (currentMainState)
+                4'd3: begin // systolicCompute
+                    if (!systolicStart && !systolicBusy && !systolicDone) begin
+                        // Start the systolic computation
+                        systolicStart <= 1'b1;
+                    end else if (systolicStart) begin
+                        // Deactivate start after one cycle
+                        systolicStart <= 1'b0;
+                    end
+                end
+
+                default: begin
+                    systolicStart <= 1'b0;
+                end
+            endcase
+        end
+    end
+
+endmodule

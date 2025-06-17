@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Jun 16 22:43:03 2025
+Analysis & Synthesis Status : Successful - Mon Jun 16 23:32:38 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : systolicArray
 Top-level Entity Name : topModule
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 608
+Total registers : 619
 Total pins : 71
 Total virtual pins : 0
 Total block memory bits : 0

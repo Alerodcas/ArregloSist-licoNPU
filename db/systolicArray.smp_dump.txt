@@ -1,17 +1,17 @@
 
-State Machine - |topModule|currentMainState
-Name currentMainState.displayResults currentMainState.storeResults currentMainState.systolicCompute currentMainState.loadMatrixB currentMainState.loadMatrixA currentMainState.idle 
-currentMainState.idle 0 0 0 0 0 0 
-currentMainState.loadMatrixA 0 0 0 0 1 1 
-currentMainState.loadMatrixB 0 0 0 1 0 1 
-currentMainState.systolicCompute 0 0 1 0 0 1 
-currentMainState.storeResults 0 1 0 0 0 1 
-currentMainState.displayResults 1 0 0 0 0 1 
-
-State Machine - |topModule|displayMode
+State Machine - |topModule|displayController:dispCtrl|displayMode
 Name displayMode.0001 
 displayMode.0000 0 
 displayMode.0001 1 
+
+State Machine - |topModule|mainStateMachine:stateMachine|currentState
+Name currentState.displayResults currentState.storeResults currentState.systolicCompute currentState.loadMatrixB currentState.loadMatrixA currentState.idle 
+currentState.idle 0 0 0 0 0 0 
+currentState.loadMatrixA 0 0 0 0 1 1 
+currentState.loadMatrixB 0 0 0 1 0 1 
+currentState.systolicCompute 0 0 1 0 0 1 
+currentState.storeResults 0 1 0 0 0 1 
+currentState.displayResults 1 0 0 0 0 1 
 
 State Machine - |topModule|systolicController:systolicController|systolicInterface:systolicInterface|state
 Name state.WAIT state.INJECT state.LOAD_MATRICES state.IDLE state.DONE 

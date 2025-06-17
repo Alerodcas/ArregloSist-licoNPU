@@ -1,0 +1,65 @@
+// Memory control operation modules
+module memoryController(
+    input  logic [3:0] currentMainState,
+    input  logic [4:0] matrixIndex,
+    input  logic [4:0] resultIndex,
+    input  logic       busy,
+    input  logic signed [15:0] injectA [0:3][0:3],
+    input  logic signed [15:0] injectB [0:3][0:3],
+    input  logic signed [15:0] resultMatrix [0:3][0:3],
+    input  logic [24:0] MATRIX_A_BASE,
+    input  logic [24:0] MATRIX_B_BASE,
+    input  logic [24:0] MATRIX_C_BASE,
+    output logic        startWrite,
+    output logic        startRead,
+    output logic [24:0] currentAddress,
+    output logic [15:0] currentWriteData
+);
+
+    // State definitions (same as main state machine)
+    typedef enum logic [3:0] {
+        idle,
+        loadMatrixA,
+        loadMatrixB,
+        systolicCompute,
+        storeResults,
+        displayResults
+    } MainState;
+
+    // Memory operations control
+    always_comb begin
+        startWrite = 1'b0;
+        startRead = 1'b0;
+        currentAddress = 25'b0;
+        currentWriteData = 16'b0;
+
+        case (currentMainState)
+            4'd1: begin // loadMatrixA
+                if (!busy) begin
+                    startWrite = 1'b1;
+                    currentAddress = MATRIX_A_BASE + matrixIndex;
+                    currentWriteData = injectA[matrixIndex >> 2][matrixIndex & 3];
+                end
+            end
+
+            4'd2: begin // loadMatrixB
+                if (!busy) begin
+                    startWrite = 1'b1;
+                    currentAddress = MATRIX_B_BASE + matrixIndex;
+                    currentWriteData = injectB[matrixIndex >> 2][matrixIndex & 3];
+                end
+            end
+
+            4'd4: begin // storeResults
+                if (!busy) begin
+                    startWrite = 1'b1;
+                    currentAddress = MATRIX_C_BASE + resultIndex;
+                    currentWriteData = resultMatrix[resultIndex >> 2][resultIndex & 3][15:0];
+                end
+            end
+            
+            default: begin
+                // No memory operation
+            end
+        endcase
+    end
